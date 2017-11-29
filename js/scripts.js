@@ -58,7 +58,6 @@ var mixer = mixitup(containerEl, {
       // the below code makes sure that when modal is clicked out, the previous filter is clicked
       $('.modal').on('hidden.bs.modal', function(e) {
         console.log(id);
-        $('#'+id).click();
       });
 
       // check if it is a touch device
