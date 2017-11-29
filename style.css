@@ -182,8 +182,13 @@ a:active{
     margin-left:1.5rem;
     margin-right: 1.5rem;
 }
-}
 
+.modal-body img {
+    width: 40%;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+}
 
 /* Container
 ---------------------------------------------------------------------- */
