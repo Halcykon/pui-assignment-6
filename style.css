@@ -179,8 +179,9 @@ a:active{
 /* Modals
 ---------------------------------------------------------------------- */
 .modal-body {
-    margin: 1.5rem;
-    }
+    margin-left:1.5rem;
+    margin-right: 1.5rem;
+}
 }
 
 
@@ -308,12 +309,12 @@ ul {
         visibility: hidden;
             display: none;
     }
-*/
+    */
 
-/* 2 Columns */
-.mix,
-.gap {
-    width: calc(50% - 0.5rem);/*change to 50% to make into two columns*/
+    /* 2 Columns */
+    .mix,
+    .gap {
+        width: calc(50% - 0.5rem);/*change to 50% to make into two columns*/
     }
 }
 

@@ -12,8 +12,8 @@ favorites.forEach(function(favorite) {
 // register click event listener
 document.querySelector('.uselessDiv').addEventListener('click', function(e) {
   var id = e.target.id,
-      item = e.target,
-      index = favorites.indexOf(id);
+  item = e.target,
+  index = favorites.indexOf(id);
   // return if target doesn't have an id (shouldn't happen)
   if (!id) return;
   // item is not favorite
@@ -21,10 +21,10 @@ document.querySelector('.uselessDiv').addEventListener('click', function(e) {
     favorites.push(id);
     item.className ='fav';
   // item is already favorite
-  } else {
-    favorites.splice(index, 1);
-    item.className = '';
-  }
+} else {
+  favorites.splice(index, 1);
+  item.className = '';
+}
   // store array in local storage
   localStorage.setItem('favorites', JSON.stringify(favorites));
 });
@@ -32,33 +32,33 @@ document.querySelector('.uselessDiv').addEventListener('click', function(e) {
 
 // ======== End star system ========
 
-    var containerEl = document.querySelector('.mixitupContainer');
+var containerEl = document.querySelector('.mixitupContainer');
 
-    var mixer = mixitup(containerEl, {
-      controls: {
+var mixer = mixitup(containerEl, {
+  controls: {
                     toggleLogic: 'and' //can switch to OR logic
-      },
-      animation: {
-            effects: 'fade',
-            duration: 200,
-            nudge: false,
-            reverseOut: false
-            }
-      });
+                  },
+                  animation: {
+                    effects: 'fade',
+                    duration: 200,
+                    nudge: false,
+                    reverseOut: false
+                  }
+                });
 
       // the below code allows js to remember what filter the user last clicked
       var id = "all";
       $(function() {
         $(".control").click(function () {
-            id = ($(this).attr('id'));
-            console.log(id);
-            });
+          id = ($(this).attr('id'));
+          console.log(id);
+        });
       });
 
       // the below code makes sure that when modal is clicked out, the previous filter is clicked
       $('.modal').on('hidden.bs.modal', function(e) {
-            console.log(id);
-            $('#'+id).click();
+        console.log(id);
+        $('#'+id).click();
       });
 
       // check if it is a touch device
@@ -70,5 +70,5 @@ document.querySelector('.uselessDiv').addEventListener('click', function(e) {
       if (!window.matchMedia || (window.matchMedia("(min-width: 991px)").matches)) {
           // enable tooltips
           $('[data-toggle="tooltip"').tooltip();
-      }
-});
+        }
+      });
