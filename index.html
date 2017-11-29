@@ -23,14 +23,19 @@ add the first 12 stuff in there
 <!DOCTYPE html>
 <html>
 <head>
+    <!-- added favicon -->
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Linking CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="js/tether.min.js"></script><!-- does the nice tooltip -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
     <link href="./reset.css" rel="stylesheet"/>
     <link href="./style.css" rel="stylesheet"/>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Linking JS -->
+    <script src="js/tether.min.js"></script><!-- does the nice tooltip -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
     <script src="js/mixitup.min.js"></script>
     <script src="js/jquery.slim.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -41,8 +46,9 @@ add the first 12 stuff in there
 
 <div class="title">the universal methods of design.</div>
 <div class="titleDescription">an interactive reference guide, based on Martin and Hanington's book.</div>
-<!-- navbar for controls -->
-<!-- change to 'data-toggle1' (in html and css) to make it 'AND' logic; 'data-filter' makes it sort one at a time -->
+
+<!-- This is the navbar -->
+<!--NOTE: change to 'data-toggle1' (in html and css) to make it 'AND' logic; 'data-filter' makes it sort one at a time -->
 <div class="controls sticky-top">
     <button id="all" type="button" class="control" data-filter="all" data-toggle="tooltip" title="All stages">all stages &nbsp</button>
     <button id="phase1" type="button" class="control" data-filter=".phase1" data-toggle="tooltip" title="Phase 1: Planning, Scoping, Definition">scoping &nbsp</button>
@@ -52,12 +58,15 @@ add the first 12 stuff in there
     <button id="phase5" type="button" class="control" data-filter=".phase5" data-toggle="tooltip" title="Phase 5: Launch and Monitor">deployment &nbsp</button>
 </div>
 
+<!-- This is where all the data is stored  -->
 <body class="body-background"">
+
+    <!-- This contains the cards -->
     <div class="mixitupContainer">
-        <div class="uselessDiv"><!-- this prevents a favoriting bug from occuring (by trying to favorite the background) -->
-            <div class="mix phase5">
+        <div class="uselessDiv"><!-- this prevents a favoriting bug from occuring (bug tries to favorite the background) -->
+            <div class="mix phase5"><!-- the mix class allows the data filter to sort anything I put here -->
                 <span id="method1" class="topPadding">A/B Testing</span>
-                <div class="collpaseText" data-target=".textPost1" data-toggle="modal">
+                <div class="collpaseText" data-target=".textPost1" data-toggle="modal"><!-- collapseText is used for smaller mobile screen; currently conflicts with the favoriting system so it is not used. -->
                     <p>
                         Compare two versions of the same design to see which one performs statistically better against a predetermined goal.
                     </p>
@@ -187,23 +196,23 @@ add the first 12 stuff in there
                 <span id="method13" class="topPadding">Cognitive Walkthrough</span>
                 <div class="collpaseText" data-target=".textPost13" data-toggle="modal">
                     <p>
-                       A method that evaluates whether the order of cues and prompts in a system reflect the way people cognitively process and anticipate tasks
-                   </p>
-                   <img src="./img/.jpg" class="img-responsive center-block" width="100%">
-               </div>
-           </div>
+                     A method that evaluates whether the order of cues and prompts in a system reflect the way people cognitively process and anticipate tasks
+                 </p>
+                 <img src="./img/.jpg" class="img-responsive center-block" width="100%">
+             </div>
+         </div>
 
-           <div class="mix phase2 phase3">
+         <div class="mix phase2 phase3">
             <span id="method14" class="topPadding">Collage</span>
             <div class="collpaseText" data-target=".textPost14" data-toggle="modal">
                 <p>
-                   Allows participants to visually express thoughts and feelings that are otherwise difficult to articulate through traditional means.
-               </p>
-               <img src="./img/.jpg" class="img-responsive center-block" width="100%">
-           </div>
-       </div>
+                 Allows participants to visually express thoughts and feelings that are otherwise difficult to articulate through traditional means.
+             </p>
+             <img src="./img/.jpg" class="img-responsive center-block" width="100%">
+         </div>
+     </div>
 
-       <div class="mix phase1 phase5">
+     <div class="mix phase1 phase5">
         <span id="method15" class="topPadding">Competitive Testing</span>
         <div class="collpaseText" data-target=".textPost15" data-toggle="modal">
             <p>
@@ -357,13 +366,13 @@ add the first 12 stuff in there
         <span id="method30" class="topPadding">Diary Studies</span>
         <div class="collpaseText" data-target=".textPost30" data-toggle="modal">
             <p>
-               Guiding artifacts that allow people to conveniently and expressively convey personal details about their daily life and events to design teams.
-           </p>
-           <img src="./img/.jpg" class="img-responsive center-block" width="100%">
-       </div>
-   </div>
+             Guiding artifacts that allow people to conveniently and expressively convey personal details about their daily life and events to design teams.
+         </p>
+         <img src="./img/.jpg" class="img-responsive center-block" width="100%">
+     </div>
+ </div>
 
-   <div class="mix phase2">
+ <div class="mix phase2">
     <span id="method31" class="topPadding">Directed Storytelling</span>
     <div class="collpaseText" data-target=".textPost31" data-toggle="modal">
         <p>
@@ -387,10 +396,10 @@ add the first 12 stuff in there
     <span id="method33" class="topPadding">Ergonomic Analysis</span>
     <div class="collpaseText" data-target=".textPost33" data-toggle="modal">
         <p>
-         Provides an assessment of tools, equipment, devices, workstations, workplaces, or environments, to optimize the fit, safety, and comfort of use by people
-     </p>
-     <img src="./img/ErgonomicAnalysis.jpg" class="img-responsive center-block" width="100%">
- </div>
+           Provides an assessment of tools, equipment, devices, workstations, workplaces, or environments, to optimize the fit, safety, and comfort of use by people
+       </p>
+       <img src="./img/ErgonomicAnalysis.jpg" class="img-responsive center-block" width="100%">
+   </div>
 </div>
 
 <div class="mix phase4">
@@ -457,10 +466,10 @@ add the first 12 stuff in there
     <span id="method40" class="topPadding">Eye-tracking</span>
     <div class="collpaseText" data-target=".textPost40" data-toggle="modal">
         <p>
-         Gathers detailed technical information on exactly where and for how long participants are looking—and not looking—when using an interface or interacting with products.
-     </p>
-     <img src="./img/.jpg" class="img-responsive center-block" width="100%">
- </div>
+           Gathers detailed technical information on exactly where and for how long participants are looking—and not looking—when using an interface or interacting with products.
+       </p>
+       <img src="./img/.jpg" class="img-responsive center-block" width="100%">
+   </div>
 </div>
 
 <div class="mix phase3 phase4">
@@ -1069,6 +1078,7 @@ add the first 12 stuff in there
 <div class="gap"></div>
 </div><!-- mixitupcontainer -->
 
+<!-- This contains the modals that go further indepth when you click on the cards -->
 <!-- Modal text1 -->
 <div class="modal fade textPost1">
     <div class="modal-dialog modal-lg" role="document">
@@ -1078,7 +1088,7 @@ add the first 12 stuff in there
             </div><!-- modal header -->
             <div class="modal-body">
                 <img src="./img/ABTesting.jpg" class="img-responsive center-block">
-                 <p>A/B testing allows you to compare two different versions of a design to see which one gets you closer to a business objective. The tests are run by randomly assigning different people down two paths—the “A” test and the “B” test—until a statistically relevant sample size is reached.
+                <p>A/B testing allows you to compare two different versions of a design to see which one gets you closer to a business objective. The tests are run by randomly assigning different people down two paths—the “A” test and the “B” test—until a statistically relevant sample size is reached.
                 </p>
                 <div class="font-weight-bold">Suggestion</div>
                 <p>Should be supplemented with qualitative methods to deeper understand customer motivations</p>
@@ -1087,15 +1097,15 @@ add the first 12 stuff in there
                     <li>Can clearly understand which variable brings better results</li>
                     <li>Statistically relevant, easily scaled</li>
                     <li>Based on user behavior, not self-reported results</li>
-                  </ul></div>
-                    <div class="column"><span>Cons</span><ul>
+                </ul></div>
+                <div class="column"><span>Cons</span><ul>
                     <li>Won’t help you understand why a design was preferred over the alternate</li>
                     <li>Cannot uncover customer desires and attitudes, or larger issues (i.e. users trust your site)</li>
-                  </ul></div><!-- div column -->
-              </div><!-- div row -->
-          </div> <!-- modal body -->
-      </div><!-- modal content -->
-  </div><!-- modal dialog -->
+                </ul></div><!-- div column -->
+            </div><!-- div row -->
+        </div> <!-- modal body -->
+    </div><!-- modal content -->
+</div><!-- modal dialog -->
 </div><!-- modal fade -->
 
 <!-- Modal text2 -->
@@ -1106,22 +1116,22 @@ add the first 12 stuff in there
                 <h5 class="modal-title">AEIOU</h5>
             </div><!-- modal header -->
             <div class="modal-body">
-                 <p>Even when observations are only casually or semi-structured, it pays to have an organizational framework in mind, such that the researcher attends to key details. AEIOU is an easy mnemonic for guiding and coding observations.
-                </p>
-                <div class="font-weight-bold">Suggestion</div>
-                <p>AEIOU is meant to be a heuristic framework to guide observations, and meant to be interdependent with other observational methods</p>
-                <div class="row">
-                    <ul>
+               <p>Even when observations are only casually or semi-structured, it pays to have an organizational framework in mind, such that the researcher attends to key details. AEIOU is an easy mnemonic for guiding and coding observations.
+               </p>
+               <div class="font-weight-bold">Suggestion</div>
+               <p>AEIOU is meant to be a heuristic framework to guide observations, and meant to be interdependent with other observational methods</p>
+               <div class="row">
+                <ul>
                     <li><b>Activities</b> are goal-directed sets of actions. <br>What specific actions/processes to people do to accomplish a goal?</li> <br>
                     <li><b>Environments</b> include the entire arena in which activities take place. <br>How does the atmosphere inform the context, including individual and shared spaces?</li> <br>
                     <li><b>Interactions</b> are between a person and someone or something else. <br>What is the nature of interaction between people, between objects, and across distances?</li> <br>
                     <li><b>Objects</b> are the building blocks of the environment, key elements sometimes put to use. <br>What objects are in people’s environments, and how do they relate to their activities?</li> <br>
                     <li><b>Users</b> are the people whose behaviors, preferences, and needs are being observed. <br>Who is present, what are their roles, relationships, values, and biases?</li><br>
-                  </ul>
-              </div><!-- div row -->
-          </div> <!-- modal body -->
-      </div><!-- modal content -->
-  </div><!-- modal dialog -->
+                </ul>
+            </div><!-- div row -->
+        </div> <!-- modal body -->
+    </div><!-- modal content -->
+</div><!-- modal dialog -->
 </div><!-- modal fade -->
 
 <!-- Modal text3 -->
@@ -1132,15 +1142,15 @@ add the first 12 stuff in there
                 <h5 class="modal-title">Affinity Diagramming</h5>
             </div><!-- modal header -->
             <div class="modal-body">
-            <div class="modal-body">
-                <img src="http://www.designorate.com/wp-content/uploads/2016/04/affinity-diagram.jpg" width="100%">
-                <p>Affinity diagramming helps designers capture research-backed insights, observations, concerns, or requirements on individual sticky notes, so that the design implication of each can be fully considered on its own.</p>
-                <div class="font-weight-bold">Suggestion</div>
-                <p>Affinity diagramming is an inductive exercise—instead of grouping notes in predefined categories, the work is done from the bottom up, by first clustering specific, small details into groups, which then give rise to the general and overarching themes. Once complete, the affinity diagram should be referred back to not as a prop, but as the voice of the customer, and a partner in design.</p>
-              </div><!-- div row -->
-          </div> <!-- modal body -->
-      </div><!-- modal content -->
-  </div><!-- modal dialog -->
+                <div class="modal-body">
+                    <img src="http://www.designorate.com/wp-content/uploads/2016/04/affinity-diagram.jpg" width="100%">
+                    <p>Affinity diagramming helps designers capture research-backed insights, observations, concerns, or requirements on individual sticky notes, so that the design implication of each can be fully considered on its own.</p>
+                    <div class="font-weight-bold">Suggestion</div>
+                    <p>Affinity diagramming is an inductive exercise—instead of grouping notes in predefined categories, the work is done from the bottom up, by first clustering specific, small details into groups, which then give rise to the general and overarching themes. Once complete, the affinity diagram should be referred back to not as a prop, but as the voice of the customer, and a partner in design.</p>
+                </div><!-- div row -->
+            </div> <!-- modal body -->
+        </div><!-- modal content -->
+    </div><!-- modal dialog -->
 </div><!-- modal fade -->
 
 <!-- Modal text4 -->
@@ -1155,16 +1165,16 @@ add the first 12 stuff in there
                 <p>Artifact analysis asks: what do objects have to say about people and their culture, time, and place? The researcher is attempting to understand the substance of the object and what it says through its material, aesthetic, and interactive qualities.</p>
                 <div class="row">
                     <ul>
-                    <li><b>Historical references:</b> whether the artifact can be identified with a particular era, time, or place.</li> <br>
-                    <li><b>Emotional assessment:</b> if significant object meaning can be assumed or deciphered.</li> <br>
-                    <li><b>Interactions</b> are between a person and someone or something else. <br>What is the nature of interaction between people, between objects, and across distances?</li> <br>
-                    <li><b>Interactive aspects:</b> consider social, shared, or collaborative intent, and whether there is evidence of misuse, adapted use, or adjustments, often suggesting design opportunities.</li> <br>
-                    <li><b>Object location:</b>  including public or private, where they are stored, displayed, or carried, if they are part of a larger whole or system, and if they are owned, shared, or communal or corporate property.</li><br>
-                  </ul></div>
-              </div><!-- div row -->
-          </div> <!-- modal body -->
-      </div><!-- modal content -->
-  </div><!-- modal dialog -->
+                        <li><b>Historical references:</b> whether the artifact can be identified with a particular era, time, or place.</li> <br>
+                        <li><b>Emotional assessment:</b> if significant object meaning can be assumed or deciphered.</li> <br>
+                        <li><b>Interactions</b> are between a person and someone or something else. <br>What is the nature of interaction between people, between objects, and across distances?</li> <br>
+                        <li><b>Interactive aspects:</b> consider social, shared, or collaborative intent, and whether there is evidence of misuse, adapted use, or adjustments, often suggesting design opportunities.</li> <br>
+                        <li><b>Object location:</b>  including public or private, where they are stored, displayed, or carried, if they are part of a larger whole or system, and if they are owned, shared, or communal or corporate property.</li><br>
+                    </ul></div>
+                </div><!-- div row -->
+            </div> <!-- modal body -->
+        </div><!-- modal content -->
+    </div><!-- modal dialog -->
 </div><!-- modal fade -->
 
 <!-- Modal text5 -->
@@ -1177,9 +1187,9 @@ add the first 12 stuff in there
             <div class="modal-body">
                 <img src="./img/AutomatedRemoteResearch.jpg" class="img-responsive center-block" width="100%">
                 <p>Automated remote research enables design teams to leverage web-based research tools and services in order to collect statistically significant information about what people are doing on your website or web application
-                <br><br>
-                Once there is enough quantitative data about what users are doing, the research team can triangulate research findings with observed behavioral data to decide which usability enhancements to make to the site.
-                <br><br>
+                    <br><br>
+                    Once there is enough quantitative data about what users are doing, the research team can triangulate research findings with observed behavioral data to decide which usability enhancements to make to the site.
+                    <br><br>
                 Because there are an ever-growing number of web-based research tools available that are both quantitative and qualitative, it is important to invest some time to understand the automated research landscape</p>
                 <div class="font-weight-bold">Suggestion</div>
                 <p>Don’t confuse with remote moderated research (more qualitative, behavior based research)</p>
@@ -1188,13 +1198,13 @@ add the first 12 stuff in there
                     <li>scalable</li>
                     <li>can research user behavior</li>
                 </ul></div>
-                  <div class="column"><span>Cons</span><br><ul>
+                <div class="column"><span>Cons</span><br><ul>
                     <li>not qualitative enough to provide insight into user behavior</li>
-                  </ul></div>
-              </div><!-- div row -->
-          </div> <!-- modal body -->
-      </div><!-- modal content -->
-  </div><!-- modal dialog -->
+                </ul></div>
+            </div><!-- div row -->
+        </div> <!-- modal body -->
+    </div><!-- modal content -->
+</div><!-- modal dialog -->
 </div><!-- modal fade -->
 
 <!-- Modal text6 -->
@@ -1207,16 +1217,16 @@ add the first 12 stuff in there
             <div class="modal-body">
                 <img src="./img/BehavioralMapping.jpg" class="img-responsive center-block" width="100%">
                 <p>Behavioral maps are used to document readily observable characteristics
-                <br><br>
+                    <br><br>
                 The emphasis of place-centered mapping is on assessing use of a particular space, the focus of individual-centered mapping is on learning about people, for example, their social behaviors and interactions. </p>
                 <div class="font-weight-bold">Suggestion</div>
                 <p>A noted limitation of the method is that often the motivations or reasons for behaviors remain unknown to the observer.
-                <br><br>
+                    <br><br>
                 The method can often be supplemented with interviews or debriefing conversations to understand more about behaviors.</p>
-              </div><!-- div row -->
-          </div> <!-- modal body -->
-      </div><!-- modal content -->
-  </div><!-- modal dialog -->
+            </div><!-- div row -->
+        </div> <!-- modal body -->
+    </div><!-- modal content -->
+</div><!-- modal dialog -->
 </div><!-- modal fade -->
 
 <!-- Modal text7 -->
@@ -1229,22 +1239,22 @@ add the first 12 stuff in there
             <div class="modal-body">
                 <img src="./img/Bodystorming.jpg" class="img-responsive center-block" width="100%">
                 <p>Roleplay: Using actors as props or characters to create a scenario. (For example, pretending to wear a futurisitc AR headset and how you might interact with others in that method)
-                <br><br>
+                    <br><br>
                 Designers immerse themselves in user situations through loosely configured or simulated contexts, moving through space and situations while paying close attention to decisions, interactive experiences, and emotional responses</p>
                 <div class="row">
                   <div class="column"><span>Pros</span><ul>
                     <li>Allows testers to explore how a system might conflict with unforeseen breakdowns (socially, culturally). Great for initially generating ideas</li>
                     <li>Easy/Cheap to do</li>
                     <li>Quick concept generation and ideation, quick prototype testing</li>
-                    </ul></div>
-                    <div class="column"><span>Cons</span><ul>
+                </ul></div>
+                <div class="column"><span>Cons</span><ul>
                     <li>Lacks user validation</li>
                 </ul>
             </div><!-- div column -->
-              </div><!-- div row -->
-          </div> <!-- modal body -->
-      </div><!-- modal content -->
-  </div><!-- modal dialog -->
+        </div><!-- div row -->
+    </div> <!-- modal body -->
+</div><!-- modal content -->
+</div><!-- modal dialog -->
 </div><!-- modal fade -->
 
 <!-- Modal text8 -->
@@ -1265,9 +1275,9 @@ add the first 12 stuff in there
                         <li>Flow Diagrams</li>
                     </ul>
                 </div><!-- div row -->
-          </div> <!-- modal body -->
-      </div><!-- modal content -->
-  </div><!-- modal dialog -->
+            </div> <!-- modal body -->
+        </div><!-- modal content -->
+    </div><!-- modal dialog -->
 </div><!-- modal fade -->
 
 <!-- Modal text9 -->
@@ -1280,12 +1290,12 @@ add the first 12 stuff in there
             <div class="modal-body">
                 <img src="./img/BusinessOrigami.jpg" class="img-responsive center-block" width="100%">
                 <p>Business Origami provides a forum in which project stakeholders can come together in a workshop setting to build a physical representation of a system, and then prototype future or alternative states of the same system.
-                <br><br>
+                    <br><br>
                 The experience of modeling the system is the critical deliverable. The final result is a physical representation of the current system design that reveals how the different touch points realistically play out over time. The method gives all participants an equal voice in the prototyping activity, and it can bridge different perspectives by providing a common reference for further discussion.</p>
-              </div><!-- div row -->
-          </div> <!-- modal body -->
-      </div><!-- modal content -->
-  </div><!-- modal dialog -->
+            </div><!-- div row -->
+        </div> <!-- modal body -->
+    </div><!-- modal content -->
+</div><!-- modal dialog -->
 </div><!-- modal fade -->
 
 <!-- Modal text10 -->
@@ -1298,22 +1308,22 @@ add the first 12 stuff in there
             <div class="modal-body">
                 <img src="./img/CardSorting.jpg" class="img-responsive center-block" width="100%">
                 <p>Card sorting is a participatory design technique that you can use to help you understand how people group information, identify how they perceive and describe different groups of information, and generate a number of possible ideas for primary, secondary, and tertiary navigation categories. Card sorts are also not very complicated to moderate, as illustrated below. The rigor of the method is in its analysis.
-                <br><br>
-                One of the most common reasons to do a card sort is to identify terminology that is likely to be misunderstood, either because the terminology is vague or because multiple meanings are associated with it.
-                <br><br>
+                    <br><br>
+                    One of the most common reasons to do a card sort is to identify terminology that is likely to be misunderstood, either because the terminology is vague or because multiple meanings are associated with it.
+                    <br><br>
                 The card sorting method can also be used when you want to generate options for structuring your information, as it can identify different schemas for organizing your menus</p>
-                    <ul><p class="font-weight-bold">Rules</p>
-                        <li>Select a moderator who is familiar with the content and participants who are the target audience of the content</li>
-                        <li>Work iteratively with individual participants or small groups of participants (no more than three to five people)</li>
-                        <li>After 15 sessions, there are diminishing returns on the insight</li>
-                        <li>Use 30 to 100 cards, and allow about 30 minutes for each multiple of 50 cards</li>
-                        <li>Include blank cards and markers to allow participants to add their own items where needed.</li>
-                        <li>If there are no consistent patterns emerging after ten card sorts, consider renaming the cards, or reconsider the categories.</li>
-                    </ul>
-              </div><!-- div row -->
-          </div> <!-- modal body -->
-      </div><!-- modal content -->
-  </div><!-- modal dialog -->
+                <ul><p class="font-weight-bold">Rules</p>
+                    <li>Select a moderator who is familiar with the content and participants who are the target audience of the content</li>
+                    <li>Work iteratively with individual participants or small groups of participants (no more than three to five people)</li>
+                    <li>After 15 sessions, there are diminishing returns on the insight</li>
+                    <li>Use 30 to 100 cards, and allow about 30 minutes for each multiple of 50 cards</li>
+                    <li>Include blank cards and markers to allow participants to add their own items where needed.</li>
+                    <li>If there are no consistent patterns emerging after ten card sorts, consider renaming the cards, or reconsider the categories.</li>
+                </ul>
+            </div><!-- div row -->
+        </div> <!-- modal body -->
+    </div><!-- modal content -->
+</div><!-- modal dialog -->
 </div><!-- modal fade -->
 
 <!-- Modal text11 -->
@@ -1330,10 +1340,10 @@ add the first 12 stuff in there
                     <br><br>
                     Case studies are inclusive, assuming that consideration of the whole, covering interrelationships, is more advantageous than a reductionist study of parts, and that this depth compensates for any shortcomings in breadth and the ability to generalize
                     <br><br>
-                    Case studies require the researcher to determine a problem, make initial hypotheses, conduct research through interviews, observations, and other forms of information gathering, revise hypotheses and theory, and tell a story</p>
-          </div> <!-- modal body -->
-      </div><!-- modal content -->
-  </div><!-- modal dialog -->
+                Case studies require the researcher to determine a problem, make initial hypotheses, conduct research through interviews, observations, and other forms of information gathering, revise hypotheses and theory, and tell a story</p>
+            </div> <!-- modal body -->
+        </div><!-- modal content -->
+    </div><!-- modal dialog -->
 </div><!-- modal fade -->
 
 <!-- Modal text12 -->
@@ -1346,12 +1356,12 @@ add the first 12 stuff in there
             <div class="modal-body">
                 <img src="./img/CognitiveMapping.jpg" class="img-responsive center-block" width="100%">
                 <p>Its purpose is to reveal how people think about a problem space, and visualize how they process and make sense of their experience. As the map builds, the participant’s subjective patterns of reasoning can be revealed and the underlying nature of the problem exposed.
-                <br><br>
+                    <br><br>
                 When “group” maps are produced that weave together multiple points of view, the maps can serve as a powerful consensus-making tool. The guidelines around building cognitive maps are purposely written to remain flexible.</p>
-              </div><!-- div row -->
-          </div> <!-- modal body -->
-      </div><!-- modal content -->
-  </div><!-- modal dialog -->
+            </div><!-- div row -->
+        </div> <!-- modal body -->
+    </div><!-- modal content -->
+</div><!-- modal dialog -->
 </div><!-- modal fade -->
 
 <!-- Modal text13 -->
@@ -1497,10 +1507,5 @@ add the first 12 stuff in there
       </div><!-- modal content -->
   </div><!-- modal dialog -->
 </div><!-- modal fade -->
-
-
-
-<!-- load JS here -->
-<!-- NOTE: data-toggle was interfering with my bootstrap, so I renamed all four instances of data-toggle to data-toggle1 -->
 </body>
 </html>

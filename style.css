@@ -1,23 +1,20 @@
 html,
 body {
-    background: #f2f2f2; /*the background of the site*/
+    background: #f2f2f2; /*the background color of the site*/
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: antialiased;
 }
 
 .body-background {
-    background: #f2f2f2;
+    background: #f2f2f2;/*background color of the site; removes bootstrap's default background white color*/
 }
 
+/*all images are responsive and fit the cards aesethetically*/
 img {
     width:80%;
     display: block;
     margin: 0 auto;
     margin-bottom: 2rem;
-}
-
-.decrease {
-    width:40%;
 }
 
 /*This makes the tooltip hover not change colors*/
@@ -48,7 +45,7 @@ a:active{
 }
 
 
-/*Star toggle button*/
+/*Star/Favorite toggle button*/
 .mixitupContainer div span:hover:after,
 .mixitupContainer div span.fav:after {
   content: ' \2605';
@@ -63,7 +60,7 @@ a:active{
     float: right;
 }
 
-/*title*/
+/*Title*/
 .title {
     background: #222;
     font-family: 'helvetica-neue', sans-serif;
@@ -108,14 +105,12 @@ a:active{
     font-size: .9rem;
     font-weight: 800;
     color: white;
-    outline: none !important;/*removes bootstraps' default blue outline on selection*/
-
-
+    outline: none !important; /*removes bootstraps' default blue outline on selection*/
     transition: background 150ms;
 }
 
 .control:hover {
-    background: #3f3f3f;
+    background: #3f3f3f;/*navbar hover color*/
 }
 
 .control[data-filter]:after,
@@ -150,6 +145,7 @@ a:active{
     border-radius: 0 3px 3px 0;
 }
 
+/*Navbar filter keywords; change these to data-toggle1 to use AND logic filter*/
 .control[data-filter=".phase1"],/*green*/
 .control[data-filter=".phase1"] {
     color: #91e6c7;
@@ -180,7 +176,7 @@ a:active{
     color:yellow;
 }
 
-/* modals
+/* Modals
 ---------------------------------------------------------------------- */
 .modal-body {
     margin: 1.5rem;
@@ -194,13 +190,17 @@ a:active{
     padding-top:1rem;
 }
 
-.mixitupContainer {
-    padding: 1rem;
+/*This div class takes care of a bug with starred favorites*/
+.uselessDiv {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-content: flex-start;
     justify-content: space-between;
+}
+
+.mixitupContainer {
+    padding: 1rem;
 }
 
 .mixitupContainer:after {
@@ -227,7 +227,7 @@ a:active{
     color: transparent;
 }
 
-/*This controls the second bar inside the box*/
+/*This controls the second bar inside the box (this is for AND logic)*/
 .mix:before {
     content: '';
     display: inline-block;
@@ -235,6 +235,7 @@ a:active{
 
 }
 
+/*This shows the second bar color (this is for AND logic)*/
 .mix.phase1 {
     color: #C5D5EA;
 }
@@ -251,6 +252,7 @@ a:active{
     color: #C5D5EA;
 }
 
+/*This gives proper formatting to any span text*/
 span {
     width: 100%;
     font-weight:700;
@@ -296,10 +298,7 @@ ul {
 /* Grid Breakpoints
 ---------------------------------------------------------------------- */
 
-
-
-
-/* 1 Column: used to test UI for mobiles, but turns out it doesn't work with the starring system*/
+/* 1 Column: used to test UI for mobiles, but turns out it doesn't work with the starring system. If I replace the starring system, I'll reuse this*/
 /*@media screen and (max-width: 540px) {
     .mix,
     .gap {
@@ -319,7 +318,6 @@ ul {
 }
 
 /* 3 Columns */
-
 @media screen and (min-width: 541px) {
     .mix,
     .gap {
@@ -328,7 +326,6 @@ ul {
 }
 
 /* 4 Columns */
-
 @media screen and (min-width: 961px) {
     .mix,
     .gap {
@@ -337,12 +334,9 @@ ul {
 }
 
 /* 5 Columns */
-
 @media screen and (min-width: 1281px) {
     .mix,
     .gap {
         width: calc(20 - ((4 * 1rem) / 5));
     }
 }
-
-

@@ -1,11 +1,10 @@
-
-// The below sets up the logic and animation for filtering
 $(document).ready(function() {
 
-// get favorites from local storage or empty array
+//======================== Below sets up the starring system ================
+// gets favorites from local storage or empty array
 var favorites = JSON.parse(localStorage.getItem('favorites')) || [];
 
-// add class'fav' to each favorite
+// add class 'fav' to each favorite
 favorites.forEach(function(favorite) {
   document.getElementById(favorite).className ='fav';
 });
@@ -28,16 +27,16 @@ document.querySelector('.uselessDiv').addEventListener('click', function(e) {
   }
   // store array in local storage
   localStorage.setItem('favorites', JSON.stringify(favorites));
-
 });
-
 // local storage stores strings so we use JSON to stringify for storage and parse to get out of storage
+
+// ======== End star system ========
 
     var containerEl = document.querySelector('.mixitupContainer');
 
     var mixer = mixitup(containerEl, {
       controls: {
-                    toggleLogic: 'and'
+                    toggleLogic: 'and' //can switch to OR logic
       },
       animation: {
             effects: 'fade',
