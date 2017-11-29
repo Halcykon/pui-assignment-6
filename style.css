@@ -63,18 +63,6 @@ a:active{
     float: right;
 }
 
-/*. This is using FA, which I am currently not using
-starPlacement {
-    float: right;
-    padding-top: 1rem;
-    padding-right: 1rem;
-    color: black;
-}
-
-.active {
-    color: black;
-}*/
-
 /*title*/
 .title {
     background: #222;
@@ -83,7 +71,22 @@ starPlacement {
     color: white;
     padding-top: 0.5rem;
     font-size: 3rem;
+    padding-left:1rem;
+    padding-right:1rem;
+    line-height: 3rem;
 }
+
+.titleDescription {
+    background: #222;
+    font-family: 'helvetica-neue', sans-serif;
+    text-align: center;
+    padding-top: 1rem;
+    color: white;
+    font-size: 1rem;
+    padding-left:1rem;
+    padding-right:1rem;
+}
+
 
 /* Controls
 ---------------------------------------------------------------------- */
@@ -115,10 +118,10 @@ starPlacement {
     background: #3f3f3f;
 }
 
-.control[data-toggle1]:after,
+.control[data-filter]:after,
 
 /*the navbar colored boxes are here*/
-.control[data-toggle1]:after {
+.control[data-filter]:after {
     content: '';
     position: absolute;
     position: right;
@@ -135,7 +138,7 @@ starPlacement {
     background: #393939;
 }
 
-.mixitup-control-active[data-toggle1]:after {
+.mixitup-control-active[data-filter]:after {
     background: currentColor; /*the color of button*/
 }
 
@@ -147,35 +150,43 @@ starPlacement {
     border-radius: 0 3px 3px 0;
 }
 
-.control[data-toggle1=".phase1"],/*green*/
-.control[data-toggle1=".phase1"] {
+.control[data-filter=".phase1"],/*green*/
+.control[data-filter=".phase1"] {
     color: #91e6c7;
 }
 
-.control[data-toggle1=".phase2"],/*blue*/
-.control[data-toggle1=".phase2"] {
+.control[data-filter=".phase2"],/*blue*/
+.control[data-filter=".phase2"] {
     color: #5ecdde;
 }
 
-.control[data-toggle1=".phase3"],/*pink*/
-.control[data-toggle1=".phase3"] {
+.control[data-filter=".phase3"],/*pink*/
+.control[data-filter=".phase3"] {
     color: #d595aa;
 }
 
-.control[data-toggle1=".phase4"],/*yellow*/
-.control[data-toggle1=".phase4"] {
+.control[data-filter=".phase4"],/*yellow*/
+.control[data-filter=".phase4"] {
     color:#EDCF8E;
 }
 
-.control[data-toggle1=".phase5"],/*green*/
-.control[data-toggle1=".phase5"] {
+.control[data-filter=".phase5"],/*green*/
+.control[data-filter=".phase5"] {
     color:#C5D5EA;
 }
 
-.control[data-toggle1=".fav"],/*yellow*/
-.control[data-toggle1=".fav"] {
+.control[data-filter=".fav"],/*yellow*/
+.control[data-filter=".fav"] {
     color:yellow;
 }
+
+/* modals
+---------------------------------------------------------------------- */
+.modal-body {
+    margin: 1.5rem;
+    }
+}
+
 
 /* Container
 ---------------------------------------------------------------------- */
