@@ -1,0 +1,1570 @@
+<!-- THINGS TO DO
+
+
+OPTIONAL
+add colored squares on the bottom to let others know what stages a technique belongs to
+portfolio: use gifs
+sort filter by favorites
+
+DONE
+- made it into filters
+-  remove blue selection outline DONE
+1. Make each card modal when clicked DONE
+2. Add tooltip for the phases
+- make navbar sticky DONE, but it has some sort of error that I don't know if I can fix
+remove tooltip it shows on mobile
+I don't like the sidebar. I think it'll mess with the function too much
+Make modals better looking
+fix sticky-top bug(?) apparently this is an issue in chrome? test.html obviously works but i dont know how OMG YES FINALLY!!!!
+add a star to favorite your best techniques
+add the first 12 stuff in there
+
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- added favicon -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Linking CSS -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <link href="./reset.css" rel="stylesheet"/>
+    <link href="./style.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
+    <!-- Linking JS -->
+    <script src="js/tether.min.js"></script><!-- does the nice tooltip -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script> -->
+    <script src="js/mixitup.min.js"></script>
+    <script src="js/jquery.slim.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
+
+    <title>Universal Methods of Design</title>
+</head>
+
+<div class="title">the universal methods of design.</div>
+<div class="titleDescription">an interactive reference guide, based on Martin and Hanington's book.</div>
+
+<!-- This is the navbar -->
+<!--NOTE: change to 'data-toggle1' (in html and css) to make it 'AND' logic; 'data-filter' makes it sort one at a time -->
+<div class="controls sticky-top">
+    <div class="center">
+        <div class="dropdown"> <!-- dropdown for design phase -->
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Design Phase
+        </button>
+        <div class="dropdown-menu">
+            <button id="all" type="button" class="control dropdown-item" data-filter="all" data-toggle="tooltip" title="All stages">all stages &nbsp</button>
+            <button id="phase1" type="button" class="control dropdown-item" data-toggle1=".phase1" data-toggle="tooltip" title="Phase 1: Planning, Scoping, Definition">scoping &nbsp</button>
+            <button id="phase2" type="button" class="control dropdown-item" data-toggle1=".phase2" data-toggle="tooltip" title="Phase 2: Sythesis, Exploration, Design Implications">synthesis &nbsp</button>
+            <button id="phase3" type="button" class="control dropdown-item" data-toggle1=".phase3" data-toggle="tooltip" title="Phase 3: Concept Generation and Early Prototype Iteration">prototyping &nbsp</button>
+            <button id="phase4" type="button" class="control dropdown-item" data-toggle1=".phase4" data-toggle="tooltip" title="Phase 4: Evaluation, Refinement, and Production stages">refinement &nbsp</button>
+            <button id="phase5" type="button" class="control dropdown-item" data-toggle1=".phase5" data-toggle="tooltip" title="Phase 5: Launch and Monitor">deployment &nbsp</button>
+        </div>
+    </div>
+
+    <div class="dropdown"> <!-- dropdown for Behavioral/Attitudinal -->
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+           Behavioral/Attitudinal
+       </button>
+       <div class="dropdown-menu">
+        <button id="all" type="button" class="control dropdown-item" data-filter="all" data-toggle="tooltip" title="All stages">all stages &nbsp</button>
+        <button id="behavioral" type="button" class="control dropdown-item" data-toggle1=".behavioral" data-toggle="tooltip" title="">behavioral &nbsp</button>
+        <button id="attitudinal" type="button" class="control dropdown-item" data-toggle1=".attitudinal" data-toggle="tooltip" title="">attitudinal &nbsp</button>
+    </div>
+</div>
+
+<div class="dropdown"> <!-- dropdown for  explorative/generative/evaluative-->
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+       Concept Exploration
+   </button>
+   <div class="dropdown-menu">
+    <button id="all" type="button" class="control dropdown-item" data-filter="all" data-toggle="tooltip" title="All stages">all stages &nbsp</button>
+    <button id="explorative" type="button" class="control dropdown-item" data-toggle1=".explorative" data-toggle="tooltip" title="">explorative &nbsp</button>
+    <button id="generative" type="button" class="control dropdown-item" data-toggle1=".generative" data-toggle="tooltip" title="">generative &nbsp</button>
+    <button id="evaluative" type="button" class="control dropdown-item" data-toggle1=".evaluative" data-toggle="tooltip" title="">evaluative &nbsp</button>
+
+</div>
+</div>
+
+<div class="dropdown"> <!-- dropdown for quant/qual -->
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+       Data Type
+   </button>
+   <div class="dropdown-menu">
+    <button id="all" type="button" class="control dropdown-item" data-filter="all" data-toggle="tooltip" title="All stages">all stages &nbsp</button>
+    <button id="quantitative" type="button" class="control dropdown-item" data-toggle1=".quantitative" data-toggle="tooltip" title="">Quantitative &nbsp</button>
+    <button id="qualitative" type="button" class="control dropdown-item" data-toggle1=".qualitative" data-toggle="tooltip" title="">Qualitative &nbsp</button>
+</div>
+</div>
+
+<div class="dropdown"> <!-- dropdown for design phase -->
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Design Type
+</button>
+<div class="dropdown-menu">
+    <button id="all" type="button" class="control dropdown-item" data-filter="all" data-toggle="tooltip" title="All stages">all stages &nbsp</button>
+    <button id="participation" type="button" class="control dropdown-item" data-toggle1=".participation" data-toggle="tooltip" title="">participation &nbsp</button>
+    <button id="observation" type="button" class="control dropdown-item" data-toggle1=".observation" data-toggle="tooltip" title="">observation &nbsp</button>
+    <button id="selfReported" type="button" class="control dropdown-item" data-toggle1=".selfReported" data-toggle="tooltip" title="">self-reported &nbsp</button>
+    <button id="expertReview" type="button" class="control dropdown-item" data-toggle1=".expertReview" data-toggle="tooltip" title="">expert review &nbsp</button>
+    <button id="designProcess" type="button" class="control dropdown-item" data-toggle1=".designProcess" data-toggle="tooltip" title="">design process &nbsp</button>
+</div>
+</div>
+</div><!-- row -->
+</div><!-- container fluid -->
+
+
+</div>
+
+<!-- This is where all the data is stored  -->
+<body class="body-background"">
+
+    <!-- This contains the cards -->
+    <div class="mixitupContainer">
+        <div class="uselessDiv"><!-- this prevents a favoriting bug from occuring (bug tries to favorite the background) -->
+            <div class="mix phase5 behavioral quantitative evaluative designProcess"><!-- the mix class allows the data filter to sort anything I put here -->
+                <span id="method1" class="topPadding">A/B Testing</span>
+                <div class="collpaseText" data-target=".textPost1" data-toggle="modal"><!-- collapseText is used for smaller mobile screen; currently conflicts with the favoriting system so it is not used. -->
+                    <p>
+                        Compare two versions of the same design to see which one performs statistically better against a predetermined goal.
+                    </p>
+                    <img src="./img/ABTesting.jpg" class="img-responsive center-block">
+                </div>
+            </div>
+
+            <div class="mix phase2 behavioral qualitative explorative observation">
+                <span id="method2" class="topPadding">AEIOU</span>
+
+                <div class="collpaseText" data-target=".textPost2" data-toggle="modal">
+                    <p>
+                        A method reminding the researcher to attend to, document, and code information under a framework of:
+                        <ul>
+                            <br>
+                            <li>Activities</li>
+                            <li>Environments</li>
+                            <li>Interactions</li>
+                            <li>Objects</li>
+                            <li>Users</li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+
+            <div class="mix phase2 phase3 phase4 phase5 behavioral attitudinal qualitative generative designProcess">
+                <span id="method3" >Affinity Diagramming</span>
+                <div class="collpaseText" data-target=".textPost3" data-toggle="modal">
+                    <p>
+                        A process used to meaningfully cluster observations and insights from research.
+                    </p>
+                    <img src="http://www.designorate.com/wp-content/uploads/2016/04/affinity-diagram.jpg" width="100%">
+                </div>
+            </div>
+
+            <div class="mix phase2 behavioral attitudinal qualitative explorative observation">
+                <span id="method4" class="topPadding">Artifact Analysis</span>
+                <div class="collpaseText" data-target=".textPost4" data-toggle="modal">
+                    <p>
+                        A systematic examination of objects that contributes to an understanding of their cultural contexts.
+                    </p>
+                    <img src="./img/ArtifactAnalysis.jpg" class="img-responsive center-block" width="100%">
+                </div>
+            </div>
+
+            <div class="mix phase2 phase3 phase5 behavioral quantitative qualitative explorative evaluative designProcess">
+                <span id="method5" class="topPadding">Automated Remote Research</span>
+                <div class="collpaseText" data-target=".textPost5" data-toggle="modal">
+                    <p>
+                        A method that can reveal statistically relevant data about what people are doing on your website, to help identify the usability enhancements with the biggest impact
+                    </p>
+                    <img src="./img/AutomatedRemoteResearch.jpg" class="img-responsive center-block" width="100%">
+                </div>
+            </div>
+
+            <div class="mix phase2 behavioral qualitative explorative observation">
+                <span id="method6" class="topPadding">Behavioral Mapping</span>
+                <div class="collpaseText" data-target=".textPost6" data-toggle="modal">
+                    <p>
+                        Used to systematically document location-based observations of human activity, using annotated maps, time-lapse photography, etc.
+                    </p>
+                    <img src="./img/BehavioralMapping.jpg" class="img-responsive center-block" width="100%">
+                </div>
+            </div>
+
+            <div class="mix phase3 behavioral qualitative generative designProcess">
+                <span id="method7" class="topPadding">Bodystorming</span>
+                <div class="collpaseText" data-target=".textPost7" data-toggle="modal">
+                    <p>
+                        Situates brainstorming in physical experience, combining role-playing and simulation to inspire new ideas and empathic prototyping.
+                    </p>
+                    <img src="./img/Bodystorming.jpg" class="img-responsive center-block" width="100%">
+                </div>
+            </div>
+
+            <div class="mix phase1 phase2 phase3 behavioral attitudinal qualitative generative designProcess">
+                <span id="method8" class="topPadding">Brainstorm Graphic Organizers</span>
+                <div class="collpaseText" data-target=".textPost8" data-toggle="modal">
+                    <p>
+                        Beyond creating lists of new ideas and concepts, helps create new knowledge by visually structuring a deep dive into a problem space.
+                    </p>
+                    <img src="./img/BrainstormGraphicOrganizers1.jpg" class="img-responsive center-block" width="100%">
+                </div>
+            </div>
+
+            <div class="mix phase1 phase2 behavioral attitudinal qualitative explorative generative participation">
+                <span id="method9" class="topPadding">Business Origami</span>
+                <div class="collpaseText" data-target=".textPost9" data-toggle="modal">
+                    <p>
+                        Enables teams to paper-prototype the interaction and value exchange among people, artifacts, and environments in a multichannel system.
+                    </p>
+                    <img src="./img/BusinessOrigami.jpg" class="img-responsive center-block" width="100%">
+                </div>
+            </div>
+
+            <div class="mix phase2 phase3 attitudinal quantitative qualitative explorative generative observation selfReported">
+                <span id="method10" class="topPadding">Card Sorting</span>
+                <div class="collpaseText" data-target=".textPost10" data-toggle="modal">
+                    <p>
+                        Can help clarify user comprehension and meaningful categorization
+                    </p>
+                    <img src="./img/CardSorting.jpg" class="img-responsive center-block" width="100%">
+                </div>
+            </div>
+
+            <div class="mix phase2 behavioral attitudinal qualitative explorative designProcess">
+                <span id="method11" class="topPadding">Case Studies</span>
+                <div class="collpaseText" data-target=".textPost11" data-toggle="modal">
+                    <p>
+                        A research strategy involving in-depth investigation of single events or instances in context, using multiple sources of research evidence.
+                    </p>
+                    <img src="./img/CaseStudies.jpg" class="img-responsive center-block" width="100%">
+                </div>
+            </div>
+
+            <div class="mix phase2 phase3 attitudinal qualitative explorative selfReported">
+                <span id="method12" class="topPadding">Cognitive Mapping</span>
+                <div class="collpaseText" data-target=".textPost12" data-toggle="modal">
+                    <p>
+                        A visualization of how people make sense of a particular problem space. Most effective when used to structure complex problems and to inform decision making.
+                    </p>
+                    <img src="./img/CognitiveMapping.jpg" class="img-responsive center-block" width="100%">
+                </div>
+            </div>
+
+            <div class="mix phase2 phase3 behavioral qualitative evaluative expertReview">
+                <span id="method13" class="topPadding">Cognitive Walkthrough</span>
+                <div class="collpaseText" data-target=".textPost13" data-toggle="modal">
+                    <p>
+                     A method that evaluates whether the order of cues and prompts in a system reflect the way people cognitively process and anticipate tasks
+                 </p>
+                 <img src="./img/.jpg" class="img-responsive center-block" width="100%">
+             </div>
+         </div>
+
+         <div class="mix phase2 phase3 attitudinal qualitative generative participation">
+            <span id="method14" class="topPadding">Collage</span>
+            <div class="collpaseText" data-target=".textPost14" data-toggle="modal">
+                <p>
+                 Allows participants to visually express thoughts and feelings that are otherwise difficult to articulate through traditional means.
+             </p>
+             <img src="./img/.jpg" class="img-responsive center-block" width="100%">
+         </div>
+     </div>
+
+     <div class="mix phase1 phase5 behavioral qualitative evaluative observation selfReported">
+        <span id="method15" class="topPadding">Competitive Testing</span>
+        <div class="collpaseText" data-target=".textPost15" data-toggle="modal">
+            <p>
+                The process of conducting research to evaluate the usability and learnability of your competitors’ products.
+            </p>
+            <img src="./img/CompetitiveTesting.jpg" class="img-responsive center-block" width="100%">
+        </div>
+    </div>
+
+    <div class="mix phase1 phase3 behavioral attitudinal qualitative generative designProcess">
+        <span id="method16" class="topPadding">Concept Mapping</span>
+        <div class="collpaseText" data-target=".textPost16" data-toggle="modal">
+            <p>
+                A visual framework that allows designers to absorb new concepts into an existing domain to draw new insights.
+            </p>
+            <img src="./img/ConceptMapping.jpg" class="img-responsive center-block" width="100%">
+        </div>
+    </div>
+
+    <div class="mix phase2 phase3 behavioral attitudinal qualitative explorative generative evaluative designProcess">
+        <span id="method17" class="topPadding">Content Analysis</span>
+        <div class="collpaseText" data-target=".textPost17" data-toggle="modal">
+            <p>
+                The systematic description of form and content of communication materials expressed in themes and counted occurrences of concepts.
+            </p>
+            <img src="./img/.jpg" class="img-responsive center-block" width="100%">
+        </div>
+    </div>
+
+    <div class="mix phase2 phase3 behavioral attitudinal qualitative explorative generative evaluative designProcess">
+        <span id="method18" class="topPadding">Content Inventory & Audit</span>
+        <div class="collpaseText" data-target=".textPost18" data-toggle="modal">
+            <p>
+                Tells you what your content is. A content audit makes recommendations as to what your content should be.
+            </p>
+            <img src="./img/.jpg" class="img-responsive center-block" width="100%">
+        </div>
+    </div>
+
+    <div class="mix phase2 phase3 behavioral attitudinal qualitative explorative generative evaluative designProcess">
+        <span id="method19" class="topPadding">Contextual Design</span>
+        <div class="collpaseText" data-target=".textPost19" data-toggle="modal">
+            <p>
+                A customer-centered process that makes designer work concrete and explicit, so that every step feels less like design magic.
+            </p>
+            <img src="./img/.jpg" class="img-responsive center-block" width="100%">
+        </div>
+    </div>
+
+    <div class="mix phase2 phase3 behavioral qualitative explorative observation selfReported">
+        <span id="method20" class="topPadding">Contextual Inquiry</span>
+        <div class="collpaseText" data-target=".textPost20" data-toggle="modal">
+            <p>
+                An immersive, contextual method of observing and interviewing that reveals underlying (and invisible) work structure.
+            </p>
+            <img src="./img/.jpg" class="img-responsive center-block" width="100%">
+        </div>
+    </div>
+
+    <div class="mix phase2 phase3 behavioral attitudinal qualitative generative participation">
+        <span id="method21" class="topPadding">Creative Toolkits</span>
+        <div class="collpaseText" data-target=".textPost21" data-toggle="modal">
+            <p>
+                Collections of physical elements conveniently organized for participatory modeling, visualization, or creative play by users, to inform and inspire design and business teams.
+            </p>
+            <img src="./img/.jpg" class="img-responsive center-block" width="100%">
+        </div>
+    </div>
+
+    <div class="mix phase2 phase3 behavioral attitudinal quantitative qualitative explorative selfReported designProcess">
+        <span id="method22" class="topPadding">Critical Incident Technique</span>
+        <div class="collpaseText" data-target=".textPost22" data-toggle="modal">
+            <p>
+                Understanding how users experience your product at critical moments can help you optimize your designs for future users.
+            </p>
+            <img src="./img/.jpg" class="img-responsive center-block" width="100%">
+        </div>
+    </div>
+
+    <div class="mix phase2 phase3 behavioral attitudinal quantitative qualitative explorative evaluative designProcess">
+        <span id="method23" class="topPadding">Crowdsourcing</span>
+        <div class="collpaseText" data-target=".textPost23" data-toggle="modal">
+            <p>
+                Occurs when an undefined, large group of people (a crowd) voluntarily responds to an open call and completes tasks and microprojects.
+            </p>
+            <img src="./img/.jpg" class="img-responsive center-block" width="100%">
+        </div>
+    </div>
+
+    <div class="mix phase2 phase3 behavioral attitudinal qualitative explorative selfReported">
+        <span id="method24" class="topPadding">Cultural Probes</span>
+        <div class="collpaseText" data-target=".textPost24" data-toggle="modal">
+            <p>
+                Provocative instruments given to participants to inspire new forms of self-understanding and communication about their lives, environments, thoughts, and interactions.
+            </p>
+            <img src="./img/.jpg" class="img-responsive center-block" width="100%">
+        </div>
+    </div>
+
+    <div class="mix phase2 phase3 behavioral attitudinal qualitative evaluative designProcess">
+        <span id="method25" class="topPadding">Customer Experience Audit</span>
+        <div class="collpaseText" data-target=".textPost25" data-toggle="modal">
+            <p>
+                Capture the day-to-day context in which people engage with your product or service.
+            </p>
+            <img src="./img/.jpg" class="img-responsive center-block" width="100%">
+        </div>
+    </div>
+
+    <div class="mix phase2 phase3 attitudinal qualitative generative participation">
+        <span id="method26" class="topPadding">Design Charette</span>
+        <div class="collpaseText" data-target=".textPost26" data-toggle="modal">
+            <p>
+                When superior design features and characteristics inspire subsequent rounds of ideas, the end result is more likely to be an optimized design solution.
+            </p>
+            <img src="./img/.jpg" class="img-responsive center-block" width="100%">
+        </div>
+    </div>
+
+    <div class="mix phase2 phase3 behavioral attitudinal qualitative explorative observation">
+        <span id="method27" class="topPadding">Design Ethnography</span>
+        <div class="collpaseText" data-target=".textPost27" data-toggle="modal">
+            <p>
+                Approximates the immersion methods of traditional ethnography, to deeply experience and understand the user’s world for design empathy and insight.
+            </p>
+            <img src="./img/.jpg" class="img-responsive center-block" width="100%">
+        </div>
+    </div>
+
+    <div class="mix phase2 phase3 behavioral attitudinal qualitative evaluative generative explorative participation">
+        <span id="method28" class="topPadding">Design Workshops</span>
+        <div class="collpaseText" data-target=".textPost28" data-toggle="modal">
+            <p>
+                A form of participatory design consolidating creative co-design methods into organized sessions for several participants to work with design team members.
+            </p>
+            <img src="./img/.jpg" class="img-responsive center-block" width="100%">
+        </div>
+    </div>
+
+    <div class="mix phase2 phase3 attitudinal qualitative evaluative selfReported">
+        <span id="method29" class="topPadding">Desirability Testing</span>
+        <div class="collpaseText" data-target=".textPost29" data-toggle="modal">
+            <p>
+                When there is disagreement about which design direction to pursue, desirability testing shifts the conversation from which design is best to which design elicits the optimal emotional response from users.
+            </p>
+            <img src="./img/.jpg" class="img-responsive center-block" width="100%">
+        </div>
+    </div>
+
+    <div class="mix phase2 behavioral attitudinal qualitative explorative selfReported">
+        <span id="method30" class="topPadding">Diary Studies</span>
+        <div class="collpaseText" data-target=".textPost30" data-toggle="modal">
+            <p>
+             Guiding artifacts that allow people to conveniently and expressively convey personal details about their daily life and events to design teams.
+         </p>
+         <img src="./img/.jpg" class="img-responsive center-block" width="100%">
+     </div>
+ </div>
+
+ <div class="mix phase2 behavioral attitudinal qualitative explorative selfReported">
+    <span id="method31" class="topPadding">Directed Storytelling</span>
+    <div class="collpaseText" data-target=".textPost31" data-toggle="modal">
+        <p>
+            Allows designers to easily gather rich stories of lived experiences from participants, using thoughtful prompts and guiding and framing questions in conversation.
+        </p>
+        <img src="./img/.jpg" class="img-responsive center-block" width="100%">
+    </div>
+</div>
+
+<div class="mix phase3 behavioral attitudinal qualitative generative designProcess">
+    <span id="method32" class="topPadding">Elito Method</span>
+    <div class="collpaseText" data-target=".textPost32" data-toggle="modal">
+        <p>
+            Used to develop solid design arguments grounded in research observations and anchored to business directives.
+        </p>
+        <img src="./img/.jpg" class="img-responsive center-block" width="100%">
+    </div>
+</div>
+
+<div class="mix phase3 phase4 behavioral quantitative evaluative expertReview">
+    <span id="method33" class="topPadding">Ergonomic Analysis</span>
+    <div class="collpaseText" data-target=".textPost33" data-toggle="modal">
+        <p>
+           Provides an assessment of tools, equipment, devices, workstations, workplaces, or environments, to optimize the fit, safety, and comfort of use by people
+       </p>
+       <img src="./img/ErgonomicAnalysis.jpg" class="img-responsive center-block" width="100%">
+   </div>
+</div>
+
+<div class="mix phase4 behavioral attitudinal quantitative evaluative designProcess">
+    <span id="method34" class="topPadding">Evaluative Research</span>
+    <div class="collpaseText" data-target=".textPost34" data-toggle="modal">
+        <p>
+            Involves the testing of prototypes, products, or interfaces by real potential users of a system in design development.
+        </p>
+        <img src="./img/EvaluativeResearch.jpg" class="img-responsive center-block" width="100%">
+    </div>
+</div>
+
+<div class="mix phase1 phase2 phase3 phase4 phase5 behavioral attitudinal quantitative explorative generative evaluative designProcess">
+    <span id="method35" class="topPadding">Evidence-based Design</span>
+    <div class="collpaseText" data-target=".textPost35" data-toggle="modal">
+        <p>
+            An approach that bases decisions for effective design on the implications of credible research and assessed outcomes, rather than sole reliance on intuition and anecdotal information.
+        </p>
+        <img src="./img/EvidenceBasedDesign.jpg" class="img-responsive center-block" width="100%">
+    </div>
+</div>
+
+<div class="mix phase3 phase4 behavioral qualitative generative designProcess">
+    <span id="method36" class="topPadding">Experience Prototyping</span>
+    <div class="collpaseText" data-target=".textPost36" data-toggle="modal">
+        <p>
+            Facilitates active participation in design through subjective engagement with a prototype system or service, product, or place.
+        </p>
+        <img src="./img/.jpg" class="img-responsive center-block" width="100%">
+    </div>
+</div>
+
+<div class="mix phase2 behavioral qualitative explorative selfReported">
+    <span id="method37" class="topPadding">Experience Sampling Method</span>
+    <div class="collpaseText" data-target=".textPost37" data-toggle="modal">
+        <p>
+            Allows the designer to collect snapshots of behaviors, interactions, thoughts, or feelings from people who self-report in real time when signaled at random or timed intervals
+        </p>
+        <img src="./img/.jpg" class="img-responsive center-block" width="100%">
+    </div>
+</div>
+
+<div class="mix phase4 behavioral attitudinal quantitative evaluative designProcess">
+    <span id="method38" class="topPadding">Experiments</span>
+    <div class="collpaseText" data-target=".textPost38" data-toggle="modal">
+        <p>
+            Measures the effect that an action has on a situation by demonstrating a causal relationship or determining conclusively that one thing is the result of another.
+        </p>
+        <img src="./img/.jpg" class="img-responsive center-block" width="100%">
+    </div>
+</div>
+
+<div class="mix phase2 behavioral attitudinal qualitative explorative designProcess">
+    <span id="method39" class="topPadding">Exploratory Research</span>
+    <div class="collpaseText" data-target=".textPost39" data-toggle="modal">
+        <p>
+            Defined by user and product studies, intended to forge an empathic knowledge base, particularly when designers may be working in unfamiliar territory
+        </p>
+        <img src="./img/.jpg" class="img-responsive center-block" width="100%">
+    </div>
+</div>
+
+<div class="mix phase1 phase4 phase5 behavioral quantitative evaluative observation">
+    <span id="method40" class="topPadding">Eye-tracking</span>
+    <div class="collpaseText" data-target=".textPost40" data-toggle="modal">
+        <p>
+           Gathers detailed technical information on exactly where and for how long participants are looking—and not looking—when using an interface or interacting with products.
+       </p>
+       <img src="./img/.jpg" class="img-responsive center-block" width="100%">
+   </div>
+</div>
+
+<div class="mix phase3 phase4 behavioral qualitative generative participation">
+    <span id="method41" class="topPadding">Flexible Modeling</span>
+    <div class="collpaseText" data-target=".textPost41" data-toggle="modal">
+        <p>
+            Given a component kit of parts, users can provide insight into product or interface configurations as guiding information for designers.
+        </p>
+        <img src="./img/.jpg" class="img-responsive center-block" width="100%">
+    </div>
+</div>
+
+<div class="mix phase2 behavioral qualitative explorative observation">
+    <span id="method42" class="topPadding">Fly-on-the-Wall Observation</span>
+    <div class="collpaseText" data-target=".textPost42" data-toggle="modal">
+        <p>
+            Allows the researcher to unobtrusively gather information by looking and listening without direct participation or interference with the people or behaviors being observed.
+        </p>
+        <img src="./img/.jpg" class="img-responsive center-block" width="100%">
+    </div>
+</div>
+
+<div class="mix phase1 phase5 attitudinal qualitative explorative selfReported">
+    <span id="method43" class="topPadding">Focus Groups</span>
+    <div class="collpaseText" data-target=".textPost43" data-toggle="modal">
+        <p>
+            The dynamic created by a small group of well-chosen people, when guided by a skilled moderator, can provide deep insight into themes, patterns, and trends.
+        </p>
+        <img src="./img/.jpg" class="img-responsive center-block" width="100%">
+    </div>
+</div>
+
+<div class="mix phase3 phase4 behavioral attitudinal qualitative generative designProcess">
+    <span id="method44" class="topPadding">Generative Research</span>
+    <div class="collpaseText" data-target=".textPost44" data-toggle="modal">
+        <p>
+            Engages users in creative opportunities to express their feelings, dreams, needs, and desires, resulting in rich information for concept development.
+        </p>
+        <img src="./img/.jpg" class="img-responsive center-block" width="100%">
+    </div>
+</div>
+
+<div class="mix phase2 attitudinal qualitative explorative selfReported">
+    <span id="method45" class="topPadding">Graffiti Walls</span>
+    <div class="collpaseText" data-target=".textPost45" data-toggle="modal">
+        <p>
+            Provide an open canvas on which participants can freely offer their written or visual comments about an environment or system, directly in the context of use.
+        </p>
+        <img src="./img/.jpg" class="img-responsive center-block" width="100%">
+    </div>
+</div>
+
+<div class="mix phase3 phase4 behavioral attitudinal quantitative qualitative evaluative expertReview">
+    <span id="method46" class="topPadding">Heuristic Evaluation</span>
+    <div class="collpaseText" data-target=".textPost46" data-toggle="modal">
+        <p>
+            An agreed-upon set of usability best practices that can help detect usability problems before actual users are brought in to further evaluate an interface.
+        </p>
+        <img src="./img/.jpg" class="img-responsive center-block" width="100%">
+    </div>
+</div>
+
+<div class="mix phase2 attitudinal qualitative explorative designProcess">
+    <span id="method47" class="topPadding">Image Boards</span>
+    <div class="collpaseText" data-target=".textPost47" data-toggle="modal">
+        <p>
+            A collage of collected pictures, illustrations, or brand imagery can be used to visually communicate an essential description of targeted aesthetics, style, audience, context, or other aspects of design intent.
+        </p>
+        <img src="./img/.jpg" class="img-responsive center-block" width="100%">
+    </div>
+</div>
+
+<div class="mix phase2 phase3 phase4 attitudinal qualitative explorative generative evaluative selfReported">
+    <span id="method48" class="topPadding">Interviews</span>
+    <div class="collpaseText" data-target=".textPost48" data-toggle="modal">
+        <p>
+            A fundamental research method for direct contact with participants, to collect firsthand personal accounts of experience, opinions, attitudes, and perceptions.
+        </p>
+        <img src="./img/.jpg" class="img-responsive center-block" width="100%">
+    </div>
+</div>
+
+<div class="mix phase1 phase2 phase3 phase4 phase5 attitudinal qualitative generative designProcess">
+    <span id="method49" class="topPadding">KJ Technique</span>
+    <div class="collpaseText" data-target=".textPost49" data-toggle="modal">
+        <p>
+            When the traditional meeting format fails to achieve group consensus, the KJ Technique can be used to help teams work through a problem space and prioritize what should be focused on first
+        </p>
+        <img src="./img/.jpg" class="img-responsive center-block" width="100%">
+    </div>
+</div>
+
+<div class="mix phase1 phase2 phase5 attitudinal qualitative explorative evaluative selfReported">
+    <span id="method50" class="topPadding">Kano Analysis</span>
+    <div class="collpaseText" data-target=".textPost50" data-toggle="modal">
+        <p>
+            Not all product attributes are equally important to the customer. Use Kano Analysis to determine which product attributes have the greatest impact on customer satisfaction.
+        </p>
+        <img src="./img/.jpg" class="img-responsive center-block" width="100%">
+    </div>
+</div>
+
+<div class="mix phase5 behavioral quantitative evaluative designProcess">
+    <span id="method51" class="topPadding">Key Performance Indicators</span>
+    <div class="collpaseText" data-target=".textPost51" data-toggle="modal">
+        <p>
+            When you need to keep a pulse on critical success factors for your product or service, a few well-selected KPIs can keep you informed and guide you when you need to course-correct.
+        </p>
+        <img src="./img/.jpg" class="img-responsive center-block" width="100%">
+    </div>
+</div>
+
+<div class="mix phase2 phase5 attitudinal qualitative explorative selfReported">
+    <span id="method52" class="topPadding">Laddering</span>
+    <div class="collpaseText" data-target=".textPost52" data-toggle="modal">
+        <p>
+            Use laddering to reveal the connection between a product’s obvious physical characteristics and the deeper, more profound personal values that it reinforces in a customer’s life.
+        </p>
+        <img src="./img/.jpg" class="img-responsive center-block" width="100%">
+    </div>
+</div>
+
+<div class="mix phase1 phase2 behavioral attitudinal qualitative explorative designProcess">
+    <span id="method53" class="topPadding">Literature Reviews</span>
+    <div class="collpaseText" data-target=".textPost53" data-toggle="modal">
+        <p>
+            Literature reviews are an integral part of academic papers, but are also a useful component of any design project, to collect and synthesize research on a given topic.
+        </p>
+        <img src="./img/.jpg" class="img-responsive center-block" width="100%">
+    </div>
+</div>
+
+<div class="mix phase1 phase2 attitudinal qualitative explorative selfReported">
+    <span id="method54" class="topPadding">The Love Letter & the Breakup Letter</span>
+    <div class="collpaseText" data-target=".textPost54" data-toggle="modal">
+        <p>
+            A personal letter written to a product often reveals profound insights about what people value and expect from the objects in their everyday lives.
+        </p>
+        <img src="./img/.jpg" class="img-responsive center-block" width="100%">
+    </div>
+</div>
+
+<div class="mix phase2 phase3 behavioral attitudinal qualitative explorative generative selfReported designProcess">
+    <span id="method55" class="topPadding">Mental Model Diagrams</span>
+    <div class="collpaseText" data-target=".textPost55" data-toggle="modal">
+        <p>
+            People tend to behave in ways consistent with dearly held beliefs. The mental model diagram can help you articulate root causes behind behaviors and develop solutions that deeply resonate with people.
+        </p>
+        <img src="./img/.jpg" class="img-responsive center-block" width="100%">
+    </div>
+</div>
+
+<div class="mix phase2 attitudinal qualitative explorative selfReported">
+    <span id="method56" class="topPadding">Mind Mapping</span>
+    <div class="collpaseText" data-target=".textPost56" data-toggle="modal">
+        <p>
+            When a topic or a problem has many moving parts, mind mapping provides a method of visually organizing a problem space in order to better understand it.
+        </p>
+        <img src="./img/.jpg" class="img-responsive center-block" width="100%">
+    </div>
+</div>
+
+<div class="mix phase2 behavioral qualitative explorative observation">
+    <span id="method57" class="topPadding">Observation</span>
+    <div class="collpaseText" data-target=".textPost57" data-toggle="modal">
+        <p>
+            A fundamental research skill, observation requires attentive looking and systematic recording of phenomena—including people, artifacts, environments, events, behaviors and interactions.
+        </p>
+        <img src="./img/.jpg" class="img-responsive center-block" width="100%">
+    </div>
+</div>
+
+<div class="mix phase3 phase4 attitudinal qualitative generative evaluative designProcess">
+    <span id="method58" class="topPadding">Parallel Prototyping</span>
+    <div class="collpaseText" data-target=".textPost58" data-toggle="modal">
+        <p>
+            Simultaneously exploring multiple design opportunities can help teams keep from fixating on a design direction too early, improve the nature of design critiques, and lead to more effective design results.
+        </p>
+        <img src="./img/.jpg" class="img-responsive center-block" width="100%">
+    </div>
+</div>
+
+<div class="mix phase2 behavioral qualitative explorative observation">
+    <span id="method59" class="topPadding">Participant Observation</span>
+    <div class="collpaseText" data-target=".textPost59" data-toggle="modal">
+        <p>
+            Participant observation is an immersive, ethnographic method for understanding situations and behaviors through the experience of membership participation in an activity, context, culture, or subculture.
+        </p>
+        <img src="./img/.jpg" class="img-responsive center-block" width="100%">
+    </div>
+</div>
+
+<div class="mix phase1 phase2 phase3 phase4 phase5 behavioral attitudinal qualitative explorative generative evaluative participation">
+    <span id="method60" class="topPadding">Participatory Action Research</span>
+    <div class="collpaseText" data-target=".textPost60" data-toggle="modal">
+        <p>
+            PAR is a cyclical, collaborative research process that seeks to intentionally change the community or other aspects that are the focus of the inquiry.
+        </p>
+        <img src="./img/.jpg" class="img-responsive center-block" width="100%">
+    </div>
+</div>
+
+<div class="mix phase2 phase3 phase4 behavioral attitudinal qualitative explorative generative evaluative participation">
+    <span id="method61" class="topPadding">Participatory Design</span>
+    <div class="collpaseText" data-target=".textPost61" data-toggle="modal">
+        <p>
+            Participatory design is a human-centered approach advocating active user and stakeholder engagement throughout all phases of the research and design process, including co-design activities.
+        </p>
+        <img src="./img/.jpg" class="img-responsive center-block" width="100%">
+    </div>
+</div>
+
+<div class="mix phase2 behavioral attitudinal qualitative explorative observation selfReported">
+    <span id="method62" class="topPadding">Personal Inventories</span>
+    <div class="collpaseText" data-target=".textPost62" data-toggle="modal">
+        <p>
+            Personal inventories allow the designer to see and understand the relevance of objects in a user’s life from the participant’s point of view, to inspire design themes and insight.
+        </p>
+        <img src="./img/.jpg" class="img-responsive center-block" width="100%">
+    </div>
+</div>
+
+<div class="mix phase3 phase4 behavioral attitudinal qualitative generative designProcess">
+    <span id="method63" class="topPadding">Personas</span>
+    <div class="collpaseText" data-target=".textPost63" data-toggle="modal">
+        <p>
+            Personas consolidate archetypal descriptions of user behavior patterns into representative profiles, to humanize design focus, test scenarios, and aid design communication.
+        </p>
+        <img src="./img/.jpg" class="img-responsive center-block" width="100%">
+    </div>
+</div>
+
+<div class="mix phase2 behavioral qualitative explorative selfReported">
+    <span id="method64" class="topPadding">Photo Studies</span>
+    <div class="collpaseText" data-target=".textPost64" data-toggle="modal">
+        <p>
+            Photo studies invite the participant to photo-document aspects of his or her life and interactions, providing the designer with visual, self-reported insights into user behaviors and priorities.
+        </p>
+        <img src="./img/.jpg" class="img-responsive center-block" width="100%">
+    </div>
+</div>
+
+<div class="mix phase2 behavioral qualitative explorative selfReported">
+    <span id="method65" class="topPadding">Picture Cards</span>
+    <div class="collpaseText" data-target=".textPost65" data-toggle="modal">
+        <p>
+            Picture cards contain images and words that help people think about and tell true stories of their life experiences, grounded in context and detail.
+        </p>
+        <img src="./img/.jpg" class="img-responsive center-block" width="100%">
+    </div>
+</div>
+
+<div class="mix phase3 phase4 behavioral attitudinal qualitative generative evaluative designProcess">
+    <span id="method66" class="topPadding">Prototyping</span>
+    <div class="collpaseText" data-target=".textPost66" data-toggle="modal">
+        <p>
+            Prototyping is the tangible creation of artifacts at various levels of resolution, for development and testing of ideas within design teams and with clients and users.
+        </p>
+        <img src="./img/.jpg" class="img-responsive center-block" width="100%">
+    </div>
+</div>
+
+<div class="mix phase2 phase4 behavioral attitudinal qualitative quantitative explorative evaluative selfReported">
+    <span id="method67" class="topPadding">Questionnaires</span>
+    <div class="collpaseText" data-target=".textPost67" data-toggle="modal">
+        <p>
+            Questionnaires are survey instruments designed for collecting self-report information from people about their characteristics, thoughts, feelings, perceptions, behaviors, or attitudes, typically in written form.
+        </p>
+        <img src="./img/.jpg" class="img-responsive center-block" width="100%">
+    </div>
+</div>
+
+<div class="mix phase2 phase3 behavioral qualitative generative evaluative observation selfReported designProcess">
+    <span id="method68" class="topPadding">Rapid Iterative Testing & Evaluation</span>
+    <div class="collpaseText" data-target=".textPost68" data-toggle="modal">
+        <p>
+            RITE is a powerful formative usability inspection method that helps teams identify and remove major problems in an interface early in the design process before costly prototypes are built.
+        </p>
+        <img src="./img/.jpg" class="img-responsive center-block" width="100%">
+    </div>
+</div>
+
+<div class="mix phase3 phase4 phase5 behavioral qualitative evaluative observation selfReported">
+    <span id="method69" class="topPadding">Remote Moderated Research</span>
+    <div class="collpaseText" data-target=".textPost69" data-toggle="modal">
+        <p>
+            Remotely observing users completing tasks on their own electronic devices can reveal rich insights into contexts of use that cannot be replicated in a controlled lab environment.
+        </p>
+        <img src="./img/.jpg" class="img-responsive center-block" width="100%">
+    </div>
+</div>
+
+<div class="mix  phase1 phase2 phase3 phase4 phase5 behavioral attitudinal qualitative explorative generative evaluative designProcess">
+    <span id="method70" class="topPadding">Research Through Design</span>
+    <div class="collpaseText" data-target=".textPost70" data-toggle="modal">
+        <p>
+            Research through design recognizes the design process as a legitimate research activity, examining the tools and processes of design thinking and making within the design project, bridging theory and building knowledge to enhance design practices.
+        </p>
+        <img src="./img/.jpg" class="img-responsive center-block" width="100%">
+    </div>
+</div>
+
+<div class="mix phase2 phase3 behavioral attitudinal qualitative explorative generative evaluative designProcess">
+    <span id="method71" class="topPadding">Role-playing</span>
+    <div class="collpaseText" data-target=".textPost71" data-toggle="modal">
+        <p>
+            Acting the role of the user in realistic scenarios can forge a deep sense of empathy and highlight challenges, presenting opportunities that can be met by design.
+        </p>
+        <img src="./img/.jpg" class="img-responsive center-block" width="100%">
+    </div>
+</div>
+
+<div class="mix phase2 phase3 behavioral attitudinal qualitative generative designProcess">
+    <span id="method72" class="topPadding">Scenario Description Swim-lanes</span>
+    <div class="collpaseText" data-target=".textPost72" data-toggle="modal">
+        <p>
+            Scenario description swimlanes are deliverables that visualize the activities of multiple actors in a flow of events and prove that a holistic perspective is greater than the sum of its parts.
+        </p>
+        <img src="./img/.jpg" class="img-responsive center-block" width="100%">
+    </div>
+</div>
+
+<div class="mix phase2 phase3 behavioral attitudinal qualitative generative designProcess">
+    <span id="method73" class="topPadding">Scenarios</span>
+    <div class="collpaseText" data-target=".textPost73" data-toggle="modal">
+        <p>
+            A scenario is a narrative that explores the future use of a product from a user’s point of view, helping design teams reason about its place in a person’s day-to-day life.
+        </p>
+        <img src="./img/.jpg" class="img-responsive center-block" width="100%">
+    </div>
+</div>
+
+<div class="mix  phase1 phase2 behavioral attitudinal qualitative quantitative explorative designProcess">
+    <span id="method74" class="topPadding">Secondary Research</span>
+    <div class="collpaseText" data-target=".textPost74" data-toggle="modal">
+        <p>
+            Secondary research consists of information collected and synthesized from existing data, rather than original material sourced through primary research with participants.
+        </p>
+        <img src="./img/.jpg" class="img-responsive center-block" width="100%">
+    </div>
+</div>
+
+<div class="mix phase1 phase4 phase5 attitudinal quantitative explorative selfReported">
+    <span id="method75" class="topPadding">Semantic Differential</span>
+    <div class="collpaseText" data-target=".textPost75" data-toggle="modal">
+        <p>
+            Semantic differentials can help reveal felt meanings that are a direct product of one’s experiences, culture, and dearly held beliefs.
+        </p>
+        <img src="./img/.jpg" class="img-responsive center-block" width="100%">
+    </div>
+</div>
+
+<div class="mix phase2 behavioral qualitative explorative observation">
+    <span id="method76" class="topPadding">Shadowing</span>
+    <div class="collpaseText" data-target=".textPost76" data-toggle="modal">
+        <p>
+            Shadowing provides key insight into a participant’s activities and decision patterns as the researcher follows him or her closely throughout his or her daily routines.
+        </p>
+        <img src="./img/.jpg" class="img-responsive center-block" width="100%">
+    </div>
+</div>
+
+<div class="mix phase3 behavioral qualitative generative designProcess">
+    <span id="method77" class="topPadding">Simulation Exercises</span>
+    <div class="collpaseText" data-target=".textPost77" data-toggle="modal">
+        <p>
+            Simulation exercises are deep approximations of human or environmental conditions, designed to forge an immersive, empathic sense of real-life user experiences.
+        </p>
+        <img src="./img/.jpg" class="img-responsive center-block" width="100%">
+    </div>
+</div>
+
+<div class="mix phase1 phase5 behavioral quantitative qualitative explorative evaluative designProcess">
+    <span id="method78" class="topPadding">Site Search Analytics</span>
+    <div class="collpaseText" data-target=".textPost78" data-toggle="modal">
+        <p>
+            Analyzing the words and phrases entered into a site search gives organizations insight into what people are looking for, which is an opportunity to evaluate how well site content meets those needs.
+        </p>
+        <img src="./img/.jpg" class="img-responsive center-block" width="100%">
+    </div>
+</div>
+
+<div class="mix phase2 phase3 behavioral attitudinal qualitative explorative generative observation selfReported designProcess">
+    <span id="method79" class="topPadding">Speed Dating</span>
+    <div class="collpaseText" data-target=".textPost79" data-toggle="modal">
+        <p>
+            When people compare multiple design concepts in quick succession, design teams can learn how people react to new technology while also taking into account existing contextual and social factors.
+        </p>
+        <img src="./img/.jpg" class="img-responsive center-block" width="100%">
+    </div>
+</div>
+
+<div class="mix phase3 behavioral attitudinal qualitative explorative designProcess">
+    <span id="method80" class="topPadding">Stakeholder Maps</span>
+    <div class="collpaseText" data-target=".textPost80" data-toggle="modal">
+        <p>
+            Stakeholder maps help to visually consolidate and communicate the key constituents of a design project, setting the stage for user-centered research and design development.
+        </p>
+        <img src="./img/.jpg" class="img-responsive center-block" width="100%">
+    </div>
+</div>
+
+<div class="mix phase3 behavioral qualitative evaluative N/A">
+    <span id="method81" class="topPadding">Stakeholder Walkthrough</span>
+    <div class="collpaseText" data-target=".textPost81" data-toggle="modal">
+        <p>
+            Stakeholder walkthroughs bring end users, stakeholders, and the design team together to evaluate early prototypes, providing actionable recommendations for improvements and building empathy.
+        </p>
+        <img src="./img/.jpg" class="img-responsive center-block" width="100%">
+    </div>
+</div>
+
+<div class="mix phase3 behavioral attitudinal qualitative generative designProcess">
+    <span id="method82" class="topPadding">Storyboards</span>
+    <div class="collpaseText" data-target=".textPost82" data-toggle="modal">
+        <p>
+            Storyboards provide a visual narrative that generates empathy and communicates the context in which a technology or form factor will be used.
+        </p>
+        <img src="./img/.jpg" class="img-responsive center-block" width="100%">
+    </div>
+</div>
+
+<div class="mix phase2 behavioral attitudinal qualitative quantitative explorative selfReported">
+    <span id="method83" class="topPadding">Surveys</span>
+    <div class="collpaseText" data-target=".textPost83" data-toggle="modal">
+        <p>
+            Surveys are a method of collecting self-reported information from people about their characteristics, thoughts, feelings, perceptions, behaviors, or attitudes.
+        </p>
+        <img src="./img/.jpg" class="img-responsive center-block" width="100%">
+    </div>
+</div>
+
+<div class="mix phase2 behavioral quantitative explorative observation">
+    <span id="method84" class="topPadding">Task Analysis</span>
+    <div class="collpaseText" data-target=".textPost84" data-toggle="modal">
+        <p>
+            Task analysis breaks down the constituent elements of a user’s work flow, including actions and interactions, system response, and environmental context.
+        </p>
+        <img src="./img/.jpg" class="img-responsive center-block" width="100%">
+    </div>
+</div>
+
+<div class="mix phase1 behavioral qualitative explorative designProcess">
+    <span id="method85" class="topPadding">Territory Maps</span>
+    <div class="collpaseText" data-target=".textPost85" data-toggle="modal">
+        <p>
+            Territory maps are visual artifacts that represent the shared focus of the design team for anticipated design activities, including the identification of suggested stakeholders.
+        </p>
+        <img src="./img/.jpg" class="img-responsive center-block" width="100%">
+    </div>
+</div>
+
+<div class="mix phase2 attitudinal qualitative explorative designProcess">
+    <span id="method86" class="topPadding">Thematic Networks</span>
+    <div class="collpaseText" data-target=".textPost86" data-toggle="modal">
+        <p>
+            Building a thematic network is a step-by-step process that helps to identify, organize, and connect the most common themes in rich, qualitative data.
+        </p>
+        <img src="./img/.jpg" class="img-responsive center-block" width="100%">
+    </div>
+</div>
+
+<div class="mix phase3 phase4 behavioral qualitative quantitative evaluative observation selfReported">
+    <span id="method87" class="topPadding">Think-aloud Protocol</span>
+    <div class="collpaseText" data-target=".textPost87" data-toggle="modal">
+        <p>
+            Think-aloud protocol is a method that requires participants to verbalize what they are doing and thinking as they complete a task, revealing aspects of an interface that delight, confuse, and frustrate.
+        </p>
+        <img src="./img/.jpg" class="img-responsive center-block" width="100%">
+    </div>
+</div>
+
+<div class="mix phase5 behavioral qualitative evaluative observation selfReported">
+    <span id="method88" class="topPadding">Time-aware Research</span>
+    <div class="collpaseText" data-target=".textPost88" data-toggle="modal">
+        <p>
+            Intercepting people at the precise moment they choose to complete a task provides keen insight into how they accomplish self-directed goals.
+        </p>
+        <img src="./img/.jpg" class="img-responsive center-block" width="100%">
+    </div>
+</div>
+
+<div class="mix phase2 behavioral qualitative explorative observation selfReported">
+    <span id="method89" class="topPadding">Touchstone Tours</span>
+    <div class="collpaseText" data-target=".textPost89" data-toggle="modal">
+        <p>
+            The guided tour is designed as a conversation that uses artifacts and the environment as touchstones for questions and insights.
+        </p>
+        <img src="./img/.jpg" class="img-responsive center-block" width="100%">
+    </div>
+</div>
+
+<div class="mix phase1 phase2 attitudinal qualitative explorative selfReported">
+    <span id="method90" class="topPadding">Triading</span>
+    <div class="collpaseText" data-target=".textPost90" data-toggle="modal">
+        <p>
+            Triading is an interviewing technique that reveals deep-seated attitudes, perceptions, and feelings toward brands, products, and services.
+        </p>
+        <img src="./img/.jpg" class="img-responsive center-block" width="100%">
+    </div>
+</div>
+
+<div class="mix phase2 phase3 phase4 behavioral attitudinal quantitative qualitative evaluative generative explorative participation observation selfReported expertReview designProcess">
+    <span id="method91" class="topPadding">Triangulation</span>
+    <div class="collpaseText" data-target=".textPost91" data-toggle="modal">
+        <p>
+            Triangulation is the convergence of multiple methods on the same research question, to corroborate evidence from several different angles.
+        </p>
+        <img src="./img/.jpg" class="img-responsive center-block" width="100%">
+    </div>
+</div>
+
+<div class="mix phase2 behavioral qualitative explorative observation">
+    <span id="method92" class="topPadding">Unobtrusive Measures</span>
+    <div class="collpaseText" data-target=".textPost92" data-toggle="modal">
+        <p>
+            Unobtrusive methods are used to acquire information without direct contact with participants, through nonreactive physical traces, archives, and observations.
+        </p>
+        <img src="./img/.jpg" class="img-responsive center-block" width="100%">
+    </div>
+</div>
+
+<div class="mix phase3 phase4 phase5 behavioral quantitative qualitative evaluative designProcess">
+    <span id="method93" class="topPadding">Usability Report</span>
+    <div class="collpaseText" data-target=".textPost93" data-toggle="modal">
+        <p>
+            The usability report is informed by empirical evidence, helping teams decide whether a product is usable enough to release, or needs revision and further testing with more participants.
+        </p>
+        <img src="./img/.jpg" class="img-responsive center-block" width="100%">
+    </div>
+</div>
+
+<div class="mix phase3 phase4 phase5 behavioral quantitative qualitative evaluative observation selfReported">
+    <span id="method94" class="topPadding">Usability Testing</span>
+    <div class="collpaseText" data-target=".textPost94" data-toggle="modal">
+        <p>
+            Usability testing focuses on people and their tasks, and seeks empirical evidence about how to improve the usability of an interface.
+        </p>
+        <img src="./img/.jpg" class="img-responsive center-block" width="100%">
+    </div>
+</div>
+
+<div class="mix phase3 behavioral attitudinal qualitative evaluative designProcess">
+    <span id="method95" class="topPadding">User Journey Maps</span>
+    <div class="collpaseText" data-target=".textPost95" data-toggle="modal">
+        <p>
+            A user journey map is a visualization of the experiences people have when interacting with a product or service, so that each moment can be individually evaluated and improved.
+        </p>
+        <img src="./img/.jpg" class="img-responsive center-block" width="100%">
+    </div>
+</div>
+
+<div class="mix phase3 phase5 attitudinal qualitative quantitative evaluative designProcess">
+    <span id="method96" class="topPadding">Value Opportunity Analysis</span>
+    <div class="collpaseText" data-target=".textPost96" data-toggle="modal">
+        <p>
+            Value opportunity analysis maps the extent to which a product’s aspirational qualities align to people’s idealized lifestyle or fantasy version of themselves.
+        </p>
+        <img src="./img/.jpg" class="img-responsive center-block" width="100%">
+    </div>
+</div>
+
+<div class="mix phase5 behavioral quantitative evaluative designProcess">
+    <span id="method97" class="topPadding">Web Analytics</span>
+    <div class="collpaseText" data-target=".textPost97" data-toggle="modal">
+        <p>
+            Web analytics are a gateway for your organization to become deeply invested in what your customers are doing online, and why.
+        </p>
+        <img src="./img/.jpg" class="img-responsive center-block" width="100%">
+    </div>
+</div>
+
+<div class="mix phase3 behavioral attitudinal qualitative quantitative evaluative designProcess">
+    <span id="method98" class="topPadding">Weighted Matrix</span>
+    <div class="collpaseText" data-target=".textPost98" data-toggle="modal">
+        <p>
+            Once your team has generated multiple design concepts, a weighted matrix can help identify and prioritize the most promising opportunities.
+        </p>
+        <img src="./img/.jpg" class="img-responsive center-block" width="100%">
+    </div>
+</div>
+
+<div class="mix phase3 phase4 behavioral attitudinal qualitative quantitative generative evaluative observation selfReported">
+    <span id="method99" class="topPadding">Wizard of Oz</span>
+    <div class="collpaseText" data-target=".textPost99" data-toggle="modal">
+        <p>
+            In the Wizard of Oz technique, a researcher (the wizard) simulates system responses from behind the scenes, while a participant engages with a system that appears to be real.
+        </p>
+        <img src="./img/.jpg" class="img-responsive center-block" width="100%">
+    </div>
+</div>
+
+<div class="mix phase2 phase3 attitudinal qualitative explorative selfReported">
+    <span id="method100" class="topPadding">Word Clouds</span>
+    <div class="collpaseText" data-target=".textPost100" data-toggle="modal">
+        <p>
+            Word clouds are a method of information visualization that organizes text-based content into interesting spatial arrangements.
+        </p>
+        <img src="./img/.jpg" class="img-responsive center-block" width="100%">
+    </div>
+</div class="uselessDiv">
+</div>
+
+<div class="gap"></div>
+<div class="gap"></div>
+<div class="gap"></div>
+</div><!-- mixitupcontainer -->
+
+<!-- This contains the modals that go further indepth when you click on the cards -->
+<!-- Modal text1 -->
+<div class="modal fade textPost1">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">A/B Testing</h5>
+            </div><!-- modal header -->
+            <div class="modal-body">
+                <img src="./img/ABTesting.jpg" class="img-responsive center-block">
+                <p>A/B testing allows you to compare two different versions of a design to see which one gets you closer to a business objective. The tests are run by randomly assigning different people down two paths—the “A” test and the “B” test—until a statistically relevant sample size is reached.
+                </p>
+                <div class="font-weight-bold">Suggestion</div>
+                <p>Should be supplemented with qualitative methods to deeper understand customer motivations</p>
+                <div class="row">
+                  <div class="column"><span>Pros</span><ul>
+                    <li>Can clearly understand which variable brings better results</li>
+                    <li>Statistically relevant, easily scaled</li>
+                    <li>Based on user behavior, not self-reported results</li>
+                </ul></div>
+                <div class="column"><span>Cons</span><ul>
+                    <li>Won’t help you understand why a design was preferred over the alternate</li>
+                    <li>Cannot uncover customer desires and attitudes, or larger issues (i.e. users trust your site)</li>
+                </ul></div><!-- div column -->
+            </div><!-- div row -->
+        </div> <!-- modal body -->
+    </div><!-- modal content -->
+</div><!-- modal dialog -->
+</div><!-- modal fade -->
+
+<!-- Modal text2 -->
+<div class="modal fade textPost2">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">AEIOU</h5>
+            </div><!-- modal header -->
+            <div class="modal-body">
+               <p>Even when observations are only casually or semi-structured, it pays to have an organizational framework in mind, such that the researcher attends to key details. AEIOU is an easy mnemonic for guiding and coding observations.
+               </p>
+               <div class="font-weight-bold">Suggestion</div>
+               <p>AEIOU is meant to be a heuristic framework to guide observations, and meant to be interdependent with other observational methods</p>
+               <div class="row">
+                <ul>
+                    <li><b>Activities</b> are goal-directed sets of actions. <br>What specific actions/processes to people do to accomplish a goal?</li> <br>
+                    <li><b>Environments</b> include the entire arena in which activities take place. <br>How does the atmosphere inform the context, including individual and shared spaces?</li> <br>
+                    <li><b>Interactions</b> are between a person and someone or something else. <br>What is the nature of interaction between people, between objects, and across distances?</li> <br>
+                    <li><b>Objects</b> are the building blocks of the environment, key elements sometimes put to use. <br>What objects are in people’s environments, and how do they relate to their activities?</li> <br>
+                    <li><b>Users</b> are the people whose behaviors, preferences, and needs are being observed. <br>Who is present, what are their roles, relationships, values, and biases?</li><br>
+                </ul>
+            </div><!-- div row -->
+        </div> <!-- modal body -->
+    </div><!-- modal content -->
+</div><!-- modal dialog -->
+</div><!-- modal fade -->
+
+<!-- Modal text3 -->
+<div class="modal fade textPost3">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Affinity Diagramming</h5>
+            </div><!-- modal header -->
+            <div class="modal-body">
+                <img src="http://www.designorate.com/wp-content/uploads/2016/04/affinity-diagram.jpg" width="100%">
+                <p>Affinity diagramming helps designers capture research-backed insights, observations, concerns, or requirements on individual sticky notes, so that the design implication of each can be fully considered on its own.</p>
+                <div class="font-weight-bold">Suggestion</div>
+                <p>Affinity diagramming is an inductive exercise—instead of grouping notes in predefined categories, the work is done from the bottom up, by first clustering specific, small details into groups, which then give rise to the general and overarching themes. Once complete, the affinity diagram should be referred back to not as a prop, but as the voice of the customer, and a partner in design.</p>
+            </div> <!-- modal body -->
+        </div><!-- modal content -->
+    </div><!-- modal dialog -->
+</div><!-- modal fade -->
+
+<!-- Modal text4 -->
+<div class="modal fade textPost4">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Artifact Analysis</h5>
+            </div><!-- modal header -->
+            <div class="modal-body">
+                <img src="./img/ArtifactAnalysis.jpg" class="img-responsive center-block" width="100%">
+                <p>Artifact analysis asks: what do objects have to say about people and their culture, time, and place? The researcher is attempting to understand the substance of the object and what it says through its material, aesthetic, and interactive qualities.</p>
+                <div class="row">
+                    <ul>
+                        <li><b>Historical references:</b> whether the artifact can be identified with a particular era, time, or place.</li> <br>
+                        <li><b>Emotional assessment:</b> if significant object meaning can be assumed or deciphered.</li> <br>
+                        <li><b>Interactions</b> are between a person and someone or something else. <br>What is the nature of interaction between people, between objects, and across distances?</li> <br>
+                        <li><b>Interactive aspects:</b> consider social, shared, or collaborative intent, and whether there is evidence of misuse, adapted use, or adjustments, often suggesting design opportunities.</li> <br>
+                        <li><b>Object location:</b>  including public or private, where they are stored, displayed, or carried, if they are part of a larger whole or system, and if they are owned, shared, or communal or corporate property.</li><br>
+                    </ul></div>
+                </div><!-- div row -->
+            </div> <!-- modal body -->
+        </div><!-- modal content -->
+    </div><!-- modal dialog -->
+</div><!-- modal fade -->
+
+<!-- Modal text5 -->
+<div class="modal fade textPost5">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Automated Remote Research</h5>
+            </div><!-- modal header -->
+            <div class="modal-body">
+                <img src="./img/AutomatedRemoteResearch.jpg" class="img-responsive center-block" width="100%">
+                <p>Automated remote research enables design teams to leverage web-based research tools and services in order to collect statistically significant information about what people are doing on your website or web application
+                    <br><br>
+                    Once there is enough quantitative data about what users are doing, the research team can triangulate research findings with observed behavioral data to decide which usability enhancements to make to the site.
+                    <br><br>
+                Because there are an ever-growing number of web-based research tools available that are both quantitative and qualitative, it is important to invest some time to understand the automated research landscape</p>
+                <div class="font-weight-bold">Suggestion</div>
+                <p>Don’t confuse with remote moderated research (more qualitative, behavior based research)</p>
+                <div class="row">
+                  <div class="column"><span>Pros</span><br><ul>
+                    <li>scalable</li>
+                    <li>can research user behavior</li>
+                </ul></div>
+                <div class="column"><span>Cons</span><br><ul>
+                    <li>not qualitative enough to provide insight into user behavior</li>
+                </ul></div>
+            </div><!-- div row -->
+        </div> <!-- modal body -->
+    </div><!-- modal content -->
+</div><!-- modal dialog -->
+</div><!-- modal fade -->
+
+<!-- Modal text6 -->
+<div class="modal fade textPost6">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Behavioral mapping</h5>
+            </div><!-- modal header -->
+            <div class="modal-body">
+                <img src="./img/BehavioralMapping.jpg" class="img-responsive center-block" width="100%">
+                <p>Behavioral maps are used to document readily observable characteristics
+                    <br><br>
+                The emphasis of place-centered mapping is on assessing use of a particular space, the focus of individual-centered mapping is on learning about people, for example, their social behaviors and interactions. </p>
+                <div class="font-weight-bold">Suggestion</div>
+                <p>A noted limitation of the method is that often the motivations or reasons for behaviors remain unknown to the observer.
+                    <br><br>
+                The method can often be supplemented with interviews or debriefing conversations to understand more about behaviors.</p>
+            </div><!-- div row -->
+        </div> <!-- modal body -->
+    </div><!-- modal content -->
+</div><!-- modal dialog -->
+</div><!-- modal fade -->
+
+<!-- Modal text7 -->
+<div class="modal fade textPost7">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Bodystorming</h5>
+            </div><!-- modal header -->
+            <div class="modal-body">
+                <img src="./img/Bodystorming.jpg" class="img-responsive center-block" width="100%">
+                <p>Roleplay: Using actors as props or characters to create a scenario. (For example, pretending to wear a futurisitc AR headset and how you might interact with others in that method)
+                    <br><br>
+                Designers immerse themselves in user situations through loosely configured or simulated contexts, moving through space and situations while paying close attention to decisions, interactive experiences, and emotional responses</p>
+                <div class="row">
+                  <div class="column"><span>Pros</span><ul>
+                    <li>Allows testers to explore how a system might conflict with unforeseen breakdowns (socially, culturally). Great for initially generating ideas</li>
+                    <li>Easy/Cheap to do</li>
+                    <li>Quick concept generation and ideation, quick prototype testing</li>
+                </ul></div>
+                <div class="column"><span>Cons</span><ul>
+                    <li>Lacks user validation</li>
+                </ul>
+            </div><!-- div column -->
+        </div><!-- div row -->
+    </div> <!-- modal body -->
+</div><!-- modal content -->
+</div><!-- modal dialog -->
+</div><!-- modal fade -->
+
+<!-- Modal text8 -->
+<div class="modal fade textPost8">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Brainstorm Graphic Organizers</h5>
+            </div><!-- modal header -->
+            <div class="modal-body">
+                <img src="./img/BrainstormGraphicOrganizers1.jpg" class="img-responsive center-block" width="100%">
+                <p>A safe forum for the expression and free association of creative ideas, and quell any inhibitions of the participants by providing a judgment-free zone to explore new concepts. Design teams can visually communicate the rigor required of most brainstorming sessions using the following visualization frameworks
+                </p>
+                <div class="row">
+                    <ul>
+                        <li>Brainstorming Webs</li>
+                        <li>Tree Diagrams</li>
+                        <li>Flow Diagrams</li>
+                    </ul>
+                </div><!-- div row -->
+            </div> <!-- modal body -->
+        </div><!-- modal content -->
+    </div><!-- modal dialog -->
+</div><!-- modal fade -->
+
+<!-- Modal text9 -->
+<div class="modal fade textPost9">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Business Origami</h5>
+            </div><!-- modal header -->
+            <div class="modal-body">
+                <img src="./img/BusinessOrigami.jpg" class="img-responsive center-block" width="100%">
+                <p>Business Origami provides a forum in which project stakeholders can come together in a workshop setting to build a physical representation of a system, and then prototype future or alternative states of the same system.
+                    <br><br>
+                The experience of modeling the system is the critical deliverable. The final result is a physical representation of the current system design that reveals how the different touch points realistically play out over time. The method gives all participants an equal voice in the prototyping activity, and it can bridge different perspectives by providing a common reference for further discussion.</p>
+            </div><!-- div row -->
+        </div> <!-- modal body -->
+    </div><!-- modal content -->
+</div><!-- modal dialog -->
+</div><!-- modal fade -->
+
+<!-- Modal text10 -->
+<div class="modal fade textPost10">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Card Sorting</h5>
+            </div><!-- modal header -->
+            <div class="modal-body">
+                <img src="./img/CardSorting.jpg" class="img-responsive center-block" width="100%">
+                <p>Card sorting is a participatory design technique that you can use to help you understand how people group information, identify how they perceive and describe different groups of information, and generate a number of possible ideas for primary, secondary, and tertiary navigation categories. Card sorts are also not very complicated to moderate, as illustrated below. The rigor of the method is in its analysis.
+                    <br><br>
+                    One of the most common reasons to do a card sort is to identify terminology that is likely to be misunderstood, either because the terminology is vague or because multiple meanings are associated with it.
+                    <br><br>
+                The card sorting method can also be used when you want to generate options for structuring your information, as it can identify different schemas for organizing your menus</p>
+                <ul><p class="font-weight-bold">Rules</p>
+                    <li>Select a moderator who is familiar with the content and participants who are the target audience of the content</li>
+                    <li>Work iteratively with individual participants or small groups of participants (no more than three to five people)</li>
+                    <li>After 15 sessions, there are diminishing returns on the insight</li>
+                    <li>Use 30 to 100 cards, and allow about 30 minutes for each multiple of 50 cards</li>
+                    <li>Include blank cards and markers to allow participants to add their own items where needed.</li>
+                    <li>If there are no consistent patterns emerging after ten card sorts, consider renaming the cards, or reconsider the categories.</li>
+                </ul>
+            </div><!-- div row -->
+        </div> <!-- modal body -->
+    </div><!-- modal content -->
+</div><!-- modal dialog -->
+</div><!-- modal fade -->
+
+<!-- Modal text11 -->
+<div class="modal fade textPost11">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Case Studies</h5>
+            </div><!-- modal header -->
+            <div class="modal-body">
+                <img src="./img/CaseStudies.jpg" class="img-responsive center-block" width="100%">
+                <p>
+                    Case studies are useful in exploratory research for understanding existing phenomena for comparison
+                    <br><br>
+                    Case studies are inclusive, assuming that consideration of the whole, covering interrelationships, is more advantageous than a reductionist study of parts, and that this depth compensates for any shortcomings in breadth and the ability to generalize
+                    <br><br>
+                Case studies require the researcher to determine a problem, make initial hypotheses, conduct research through interviews, observations, and other forms of information gathering, revise hypotheses and theory, and tell a story</p>
+            </div> <!-- modal body -->
+        </div><!-- modal content -->
+    </div><!-- modal dialog -->
+</div><!-- modal fade -->
+
+<!-- Modal text12 -->
+<div class="modal fade textPost12">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Cognitive Mapping</h5>
+            </div><!-- modal header -->
+            <div class="modal-body">
+                <img src="./img/CognitiveMapping.jpg" class="img-responsive center-block" width="100%">
+                <p>Its purpose is to reveal how people think about a problem space, and visualize how they process and make sense of their experience. As the map builds, the participant’s subjective patterns of reasoning can be revealed and the underlying nature of the problem exposed.
+                    <br><br>
+                When “group” maps are produced that weave together multiple points of view, the maps can serve as a powerful consensus-making tool. The guidelines around building cognitive maps are purposely written to remain flexible.</p>
+            </div><!-- div row -->
+        </div> <!-- modal body -->
+    </div><!-- modal content -->
+</div><!-- modal dialog -->
+</div><!-- modal fade -->
+
+<!-- Modal text13 -->
+<div class="modal fade textPost13">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Cognitive Walkthrough</h5>
+            </div><!-- modal header -->
+            <div class="modal-body">
+                <p>Use A/B testing to compare two versions of the same design to see which one performs statistically better against a predetermined goal</p>
+                <div class="row">
+                  <div class="column"><span>Pros</span><br> placeholder text</div>
+                  <div class="column"><span>Cons</span><br> placeholder text</div>
+              </div><!-- div row -->
+          </div> <!-- modal body -->
+      </div><!-- modal content -->
+  </div><!-- modal dialog -->
+</div><!-- modal fade -->
+
+<!-- Modal text14 -->
+<div class="modal fade textPost14">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Collage</h5>
+            </div><!-- modal header -->
+            <div class="modal-body">
+                <p>Use A/B testing to compare two versions of the same design to see which one performs statistically better against a predetermined goal</p>
+                <div class="row">
+                  <div class="column"><span>Pros</span><br> placeholder text</div>
+                  <div class="column"><span>Cons</span><br> placeholder text</div>
+              </div><!-- div row -->
+          </div> <!-- modal body -->
+      </div><!-- modal content -->
+  </div><!-- modal dialog -->
+</div><!-- modal fade -->
+
+<!-- Modal text15 -->
+<div class="modal fade textPost15">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Competitive Testing</h5>
+            </div><!-- modal header -->
+            <div class="modal-body">
+                <p>Use A/B testing to compare two versions of the same design to see which one performs statistically better against a predetermined goal</p>
+                <div class="row">
+                  <div class="column"><span>Pros</span><br> placeholder text</div>
+                  <div class="column"><span>Cons</span><br> placeholder text</div>
+              </div><!-- div row -->
+          </div> <!-- modal body -->
+      </div><!-- modal content -->
+  </div><!-- modal dialog -->
+</div><!-- modal fade -->
+
+<!-- Modal text16 -->
+<div class="modal fade textPost16">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Concept Mapping</h5>
+            </div><!-- modal header -->
+            <div class="modal-body">
+                <p>Use A/B testing to compare two versions of the same design to see which one performs statistically better against a predetermined goal</p>
+                <div class="row">
+                  <div class="column"><span>Pros</span><br> placeholder text</div>
+                  <div class="column"><span>Cons</span><br> placeholder text</div>
+              </div><!-- div row -->
+          </div> <!-- modal body -->
+      </div><!-- modal content -->
+  </div><!-- modal dialog -->
+</div><!-- modal fade -->
+
+<!-- Modal text17 -->
+<div class="modal fade textPost17">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Content Analysis</h5>
+            </div><!-- modal header -->
+            <div class="modal-body">
+                <p>Use A/B testing to compare two versions of the same design to see which one performs statistically better against a predetermined goal</p>
+                <div class="row">
+                  <div class="column"><span>Pros</span><br> placeholder text</div>
+                  <div class="column"><span>Cons</span><br> placeholder text</div>
+              </div><!-- div row -->
+          </div> <!-- modal body -->
+      </div><!-- modal content -->
+  </div><!-- modal dialog -->
+</div><!-- modal fade -->
+
+<!-- Modal text18 -->
+<div class="modal fade textPost18">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Content Inventory & Audit</h5>
+            </div><!-- modal header -->
+            <div class="modal-body">
+                <p>Use A/B testing to compare two versions of the same design to see which one performs statistically better against a predetermined goal</p>
+                <div class="row">
+                  <div class="column"><span>Pros</span><br> placeholder text</div>
+                  <div class="column"><span>Cons</span><br> placeholder text</div>
+              </div><!-- div row -->
+          </div> <!-- modal body -->
+      </div><!-- modal content -->
+  </div><!-- modal dialog -->
+</div><!-- modal fade -->
+
+<!-- Modal text19 -->
+<div class="modal fade textPost19">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Contextual Design</h5>
+            </div><!-- modal header -->
+            <div class="modal-body">
+                <p>Use A/B testing to compare two versions of the same design to see which one performs statistically better against a predetermined goal</p>
+                <div class="row">
+                  <div class="column"><span>Pros</span><br> placeholder text</div>
+                  <div class="column"><span>Cons</span><br> placeholder text</div>
+              </div><!-- div row -->
+          </div> <!-- modal body -->
+      </div><!-- modal content -->
+  </div><!-- modal dialog -->
+</div><!-- modal fade -->
+
+<!-- Modal text20 -->
+<div class="modal fade textPost20">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Contextual Inquiry</h5>
+            </div><!-- modal header -->
+            <div class="modal-body">
+                <p class>Use A/B testing to compare two versions of the same design to see which one performs statistically better against a predetermined goal</p>
+                <div class="row">
+                  <div class="column"><span>Pros</span><br> placeholder text</div>
+                  <div class="column"><span>Cons</span><br> placeholder text</div>
+              </div><!-- div row -->
+          </div> <!-- modal body -->
+      </div><!-- modal content -->
+  </div><!-- modal dialog -->
+</div><!-- modal fade -->
+</body>
+</html>
