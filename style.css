@@ -55,8 +55,8 @@ a:active{
   content: ' \2606';
 }
 
-.moveToRight {
-    text-align: right;
+.floatRight {
+    /*text-align: left;*/
     float: right;
 }
 
@@ -76,8 +76,6 @@ a:active{
 .titleDescription {
     background: #222;
     font-family: 'helvetica-neue', sans-serif;
-    text-align: center;
-    padding-top: 1rem;
     color: white;
     font-size: 1rem;
     padding-left:1rem;
@@ -211,6 +209,19 @@ a:active{
 .topPadding {
     padding-top:1rem;
 }
+
+.justifyRight {
+    text-align:right;
+}
+
+.lightBlue {
+    color: lightblue;
+}
+
+.lightBlue:hover{
+  color: pink;
+}
+
 
 /*This div class takes care of a bug with starred favorites*/
 .uselessDiv {
