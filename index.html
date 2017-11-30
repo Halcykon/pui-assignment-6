@@ -1,5 +1,7 @@
 <!-- THINGS TO DO
 
+have the selected text be what is shown on the dropdown menu
+
 
 OPTIONAL
 add colored squares on the bottom to let others know what stages a technique belongs to
@@ -18,6 +20,11 @@ Make modals better looking
 fix sticky-top bug(?) apparently this is an issue in chrome? test.html obviously works but i dont know how OMG YES FINALLY!!!!
 add a star to favorite your best techniques
 add the first 12 stuff in there
+
+MOBILE
+fix modal margin issue
+add close buttons
+fix pro/con columns
 
 -->
 <!DOCTYPE html>
@@ -55,6 +62,7 @@ add the first 12 stuff in there
           <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Design Phase
         </button>
+
         <div class="dropdown-menu">
             <button id="all" type="button" class="control dropdown-item" data-filter="all" data-toggle="tooltip" title="All stages">all stages &nbsp</button>
             <button id="phase1" type="button" class="control dropdown-item" data-toggle1=".phase1" data-toggle="tooltip" title="Phase 1: Planning, Scoping, Definition">scoping &nbsp</button>
@@ -67,9 +75,9 @@ add the first 12 stuff in there
 
     <div class="dropdown"> <!-- dropdown for Behavioral/Attitudinal -->
         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-           Thought v. Action
-       </button>
-       <div class="dropdown-menu">
+         Thought v. Action
+     </button>
+     <div class="dropdown-menu">
         <button id="all" type="button" class="control dropdown-item" data-filter="all" data-toggle="tooltip" title="All stages">all stages &nbsp</button>
         <button id="behavioral" type="button" class="control dropdown-item" data-toggle1=".behavioral" data-toggle="tooltip" title="What people do">behavioral &nbsp</button>
         <button id="attitudinal" type="button" class="control dropdown-item" data-toggle1=".attitudinal" data-toggle="tooltip" title="What people say">attitudinal &nbsp</button>
@@ -78,9 +86,9 @@ add the first 12 stuff in there
 
 <div class="dropdown"> <!-- dropdown for  explorative/generative/evaluative-->
     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-       Design Goal
-   </button>
-   <div class="dropdown-menu">
+     Design Goal
+ </button>
+ <div class="dropdown-menu">
     <button id="all" type="button" class="control dropdown-item" data-filter="all" data-toggle="tooltip" title="All stages">all stages &nbsp</button>
     <button id="explorative" type="button" class="control dropdown-item" data-toggle1=".explorative" data-toggle="tooltip" title="Explore a space">explorative &nbsp</button>
     <button id="generative" type="button" class="control dropdown-item" data-toggle1=".generative" data-toggle="tooltip" title="Generate new ideas">generative &nbsp</button>
@@ -91,9 +99,9 @@ add the first 12 stuff in there
 
 <div class="dropdown"> <!-- dropdown for quant/qual -->
     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-       Quant v. Qual
-   </button>
-   <div class="dropdown-menu">
+     Quant v. Qual
+ </button>
+ <div class="dropdown-menu">
     <button id="all" type="button" class="control dropdown-item" data-filter="all" data-toggle="tooltip" title="All stages">all stages &nbsp</button>
     <button id="quantitative" type="button" class="control dropdown-item" data-toggle1=".quantitative" data-toggle="tooltip" title="">Quantitative &nbsp</button>
     <button id="qualitative" type="button" class="control dropdown-item" data-toggle1=".qualitative" data-toggle="tooltip" title="">Qualitative &nbsp</button>
@@ -257,23 +265,23 @@ add the first 12 stuff in there
                 <span id="method13" class="topPadding">Cognitive Walkthrough</span>
                 <div class="collpaseText" data-target=".textPost13" data-toggle="modal">
                     <p>
-                     A method that evaluates whether the order of cues and prompts in a system reflect the way people cognitively process and anticipate tasks
-                 </p>
-                 <img src="./img/.jpg" class="img-responsive center-block" width="100%">
-             </div>
-         </div>
+                       A method that evaluates whether the order of cues and prompts in a system reflect the way people cognitively process and anticipate tasks
+                   </p>
+                   <img src="./img/.jpg" class="img-responsive center-block" width="100%">
+               </div>
+           </div>
 
-         <div class="mix phase2 phase3 attitudinal qualitative generative participation">
+           <div class="mix phase2 phase3 attitudinal qualitative generative participation">
             <span id="method14" class="topPadding">Collage</span>
             <div class="collpaseText" data-target=".textPost14" data-toggle="modal">
                 <p>
-                 Allows participants to visually express thoughts and feelings that are otherwise difficult to articulate through traditional means.
-             </p>
-             <img src="./img/.jpg" class="img-responsive center-block" width="100%">
-         </div>
-     </div>
+                   Allows participants to visually express thoughts and feelings that are otherwise difficult to articulate through traditional means.
+               </p>
+               <img src="./img/.jpg" class="img-responsive center-block" width="100%">
+           </div>
+       </div>
 
-     <div class="mix phase1 phase5 behavioral qualitative evaluative observation selfReported">
+       <div class="mix phase1 phase5 behavioral qualitative evaluative observation selfReported">
         <span id="method15" class="topPadding">Competitive Testing</span>
         <div class="collpaseText" data-target=".textPost15" data-toggle="modal">
             <p>
@@ -427,13 +435,13 @@ add the first 12 stuff in there
         <span id="method30" class="topPadding">Diary Studies</span>
         <div class="collpaseText" data-target=".textPost30" data-toggle="modal">
             <p>
-             Guiding artifacts that allow people to conveniently and expressively convey personal details about their daily life and events to design teams.
-         </p>
-         <img src="./img/.jpg" class="img-responsive center-block" width="100%">
-     </div>
- </div>
+               Guiding artifacts that allow people to conveniently and expressively convey personal details about their daily life and events to design teams.
+           </p>
+           <img src="./img/.jpg" class="img-responsive center-block" width="100%">
+       </div>
+   </div>
 
- <div class="mix phase2 behavioral attitudinal qualitative explorative selfReported">
+   <div class="mix phase2 behavioral attitudinal qualitative explorative selfReported">
     <span id="method31" class="topPadding">Directed Storytelling</span>
     <div class="collpaseText" data-target=".textPost31" data-toggle="modal">
         <p>
@@ -457,10 +465,10 @@ add the first 12 stuff in there
     <span id="method33" class="topPadding">Ergonomic Analysis</span>
     <div class="collpaseText" data-target=".textPost33" data-toggle="modal">
         <p>
-           Provides an assessment of tools, equipment, devices, workstations, workplaces, or environments, to optimize the fit, safety, and comfort of use by people
-       </p>
-       <img src="./img/ErgonomicAnalysis.jpg" class="img-responsive center-block" width="100%">
-   </div>
+         Provides an assessment of tools, equipment, devices, workstations, workplaces, or environments, to optimize the fit, safety, and comfort of use by people
+     </p>
+     <img src="./img/ErgonomicAnalysis.jpg" class="img-responsive center-block" width="100%">
+ </div>
 </div>
 
 <div class="mix phase4 behavioral attitudinal quantitative evaluative designProcess">
@@ -527,10 +535,10 @@ add the first 12 stuff in there
     <span id="method40" class="topPadding">Eye-tracking</span>
     <div class="collpaseText" data-target=".textPost40" data-toggle="modal">
         <p>
-           Gathers detailed technical information on exactly where and for how long participants are looking—and not looking—when using an interface or interacting with products.
-       </p>
-       <img src="./img/.jpg" class="img-responsive center-block" width="100%">
-   </div>
+         Gathers detailed technical information on exactly where and for how long participants are looking—and not looking—when using an interface or interacting with products.
+     </p>
+     <img src="./img/.jpg" class="img-responsive center-block" width="100%">
+ </div>
 </div>
 
 <div class="mix phase3 phase4 behavioral qualitative generative participation">
@@ -1168,7 +1176,7 @@ add the first 12 stuff in there
                 </ul></div><!-- div column -->
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
+                </div><!-- modal footer -->
             </div><!-- div row -->
         </div> <!-- modal body -->
     </div><!-- modal content -->
@@ -1181,16 +1189,16 @@ add the first 12 stuff in there
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">AEIOU</h5>
-                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div><!-- modal header -->
             <div class="modal-body">
-               <p>Even when observations are only casually or semi-structured, it pays to have an organizational framework in mind, such that the researcher attends to key details. AEIOU is an easy mnemonic for guiding and coding observations.
-               </p>
-               <div class="font-weight-bold">Suggestion</div>
-               <p>AEIOU is meant to be a heuristic framework to guide observations, and meant to be interdependent with other observational methods</p>
-               <div class="row">
+             <p>Even when observations are only casually or semi-structured, it pays to have an organizational framework in mind, such that the researcher attends to key details. AEIOU is an easy mnemonic for guiding and coding observations.
+             </p>
+             <div class="font-weight-bold">Suggestion</div>
+             <p>AEIOU is meant to be a heuristic framework to guide observations, and meant to be interdependent with other observational methods</p>
+             <div class="row">
                 <ul>
                     <li><b>Activities</b> are goal-directed sets of actions. <br>What specific actions/processes to people do to accomplish a goal?</li> <br>
                     <li><b>Environments</b> include the entire arena in which activities take place. <br>How does the atmosphere inform the context, including individual and shared spaces?</li> <br>
@@ -1198,6 +1206,9 @@ add the first 12 stuff in there
                     <li><b>Objects</b> are the building blocks of the environment, key elements sometimes put to use. <br>What objects are in people’s environments, and how do they relate to their activities?</li> <br>
                     <li><b>Users</b> are the people whose behaviors, preferences, and needs are being observed. <br>Who is present, what are their roles, relationships, values, and biases?</li><br>
                 </ul>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div><!-- modal footer -->
             </div><!-- div row -->
         </div> <!-- modal body -->
     </div><!-- modal content -->
@@ -1210,7 +1221,7 @@ add the first 12 stuff in there
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Affinity Diagramming</h5>
-                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div><!-- modal header -->
@@ -1219,69 +1230,78 @@ add the first 12 stuff in there
                 <p>Affinity diagramming helps designers capture research-backed insights, observations, concerns, or requirements on individual sticky notes, so that the design implication of each can be fully considered on its own.</p>
                 <div class="font-weight-bold">Suggestion</div>
                 <p>Affinity diagramming is an inductive exercise—instead of grouping notes in predefined categories, the work is done from the bottom up, by first clustering specific, small details into groups, which then give rise to the general and overarching themes. Once complete, the affinity diagram should be referred back to not as a prop, but as the voice of the customer, and a partner in design.</p>
-            </div> <!-- modal body -->
-        </div><!-- modal content -->
-    </div><!-- modal dialog -->
-</div><!-- modal fade -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div><!-- modal footer -->
+                </div> <!-- modal body -->
+            </div><!-- modal content -->
+        </div><!-- modal dialog -->
+    </div><!-- modal fade -->
 
-<!-- Modal text4 -->
-<div class="modal fade textPost4">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Artifact Analysis</h5>
-                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div><!-- modal header -->
-            <div class="modal-body">
-                <img src="./img/ArtifactAnalysis.jpg" class="img-responsive center-block" width="100%">
-                <p>Artifact analysis asks: what do objects have to say about people and their culture, time, and place? The researcher is attempting to understand the substance of the object and what it says through its material, aesthetic, and interactive qualities.</p>
-                <div class="row">
-                    <ul>
-                        <li><b>Historical references:</b> whether the artifact can be identified with a particular era, time, or place.</li> <br>
-                        <li><b>Emotional assessment:</b> if significant object meaning can be assumed or deciphered.</li> <br>
-                        <li><b>Interactions</b> are between a person and someone or something else. <br>What is the nature of interaction between people, between objects, and across distances?</li> <br>
-                        <li><b>Interactive aspects:</b> consider social, shared, or collaborative intent, and whether there is evidence of misuse, adapted use, or adjustments, often suggesting design opportunities.</li> <br>
-                        <li><b>Object location:</b>  including public or private, where they are stored, displayed, or carried, if they are part of a larger whole or system, and if they are owned, shared, or communal or corporate property.</li><br>
+    <!-- Modal text4 -->
+    <div class="modal fade textPost4">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Artifact Analysis</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div><!-- modal header -->
+                <div class="modal-body">
+                    <img src="./img/ArtifactAnalysis.jpg" class="img-responsive center-block" width="100%">
+                    <p>Artifact analysis asks: what do objects have to say about people and their culture, time, and place? The researcher is attempting to understand the substance of the object and what it says through its material, aesthetic, and interactive qualities.</p>
+                    <div class="row">
+                        <ul>
+                            <li><b>Historical references:</b> whether the artifact can be identified with a particular era, time, or place.</li> <br>
+                            <li><b>Emotional assessment:</b> if significant object meaning can be assumed or deciphered.</li> <br>
+                            <li><b>Interactions</b> are between a person and someone or something else. <br>What is the nature of interaction between people, between objects, and across distances?</li> <br>
+                            <li><b>Interactive aspects:</b> consider social, shared, or collaborative intent, and whether there is evidence of misuse, adapted use, or adjustments, often suggesting design opportunities.</li> <br>
+                            <li><b>Object location:</b>  including public or private, where they are stored, displayed, or carried, if they are part of a larger whole or system, and if they are owned, shared, or communal or corporate property.</li><br>
+                        </ul></div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div><!-- modal footer -->
+                    </div><!-- div row -->
+                </div> <!-- modal body -->
+            </div><!-- modal content -->
+        </div><!-- modal dialog -->
+    </div><!-- modal fade -->
+
+    <!-- Modal text5 -->
+    <div class="modal fade textPost5">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Automated Remote Research</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div><!-- modal header -->
+                <div class="modal-body">
+                    <img src="./img/AutomatedRemoteResearch.jpg" class="img-responsive center-block" width="100%">
+                    <p>Automated remote research enables design teams to leverage web-based research tools and services in order to collect statistically significant information about what people are doing on your website or web application
+                        <br><br>
+                        Once there is enough quantitative data about what users are doing, the research team can triangulate research findings with observed behavioral data to decide which usability enhancements to make to the site.
+                        <br><br>
+                    Because there are an ever-growing number of web-based research tools available that are both quantitative and qualitative, it is important to invest some time to understand the automated research landscape</p>
+                    <div class="font-weight-bold">Suggestion</div>
+                    <p>Don’t confuse with remote moderated research (more qualitative, behavior based research)</p>
+                    <div class="row">
+                      <div class="column col-sm-6 col-xs-12"><span>Pros</span><br><ul>
+                        <li>scalable</li>
+                        <li>can research user behavior</li>
                     </ul></div>
+                    <div class="column col-sm-6 col-xs-12"><span>Cons</span><br><ul>
+                        <li>not qualitative enough to provide insight into user behavior</li>
+                    </ul></div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div><!-- modal footer -->
                 </div><!-- div row -->
             </div> <!-- modal body -->
         </div><!-- modal content -->
     </div><!-- modal dialog -->
-</div><!-- modal fade -->
-
-<!-- Modal text5 -->
-<div class="modal fade textPost5">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Automated Remote Research</h5>
-                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div><!-- modal header -->
-            <div class="modal-body">
-                <img src="./img/AutomatedRemoteResearch.jpg" class="img-responsive center-block" width="100%">
-                <p>Automated remote research enables design teams to leverage web-based research tools and services in order to collect statistically significant information about what people are doing on your website or web application
-                    <br><br>
-                    Once there is enough quantitative data about what users are doing, the research team can triangulate research findings with observed behavioral data to decide which usability enhancements to make to the site.
-                    <br><br>
-                Because there are an ever-growing number of web-based research tools available that are both quantitative and qualitative, it is important to invest some time to understand the automated research landscape</p>
-                <div class="font-weight-bold">Suggestion</div>
-                <p>Don’t confuse with remote moderated research (more qualitative, behavior based research)</p>
-                <div class="row">
-                  <div class="column col-sm-6 col-xs-12"><span>Pros</span><br><ul>
-                    <li>scalable</li>
-                    <li>can research user behavior</li>
-                </ul></div>
-                <div class="column col-sm-6 col-xs-12"><span>Cons</span><br><ul>
-                    <li>not qualitative enough to provide insight into user behavior</li>
-                </ul></div>
-            </div><!-- div row -->
-        </div> <!-- modal body -->
-    </div><!-- modal content -->
-</div><!-- modal dialog -->
 </div><!-- modal fade -->
 
 <!-- Modal text6 -->
@@ -1290,7 +1310,7 @@ add the first 12 stuff in there
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Behavioral mapping</h5>
-                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div><!-- modal header -->
@@ -1303,6 +1323,9 @@ add the first 12 stuff in there
                 <p>A noted limitation of the method is that often the motivations or reasons for behaviors remain unknown to the observer.
                     <br><br>
                 The method can often be supplemented with interviews or debriefing conversations to understand more about behaviors.</p>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div><!-- modal footer -->
             </div><!-- div row -->
         </div> <!-- modal body -->
     </div><!-- modal content -->
@@ -1315,7 +1338,7 @@ add the first 12 stuff in there
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Bodystorming</h5>
-                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div><!-- modal header -->
@@ -1334,6 +1357,9 @@ add the first 12 stuff in there
                     <li>Lacks user validation</li>
                 </ul>
             </div><!-- div column -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div><!-- modal footer -->
         </div><!-- div row -->
     </div> <!-- modal body -->
 </div><!-- modal content -->
@@ -1346,7 +1372,7 @@ add the first 12 stuff in there
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Brainstorm Graphic Organizers</h5>
-                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div><!-- modal header -->
@@ -1360,6 +1386,9 @@ add the first 12 stuff in there
                         <li>Tree Diagrams</li>
                         <li>Flow Diagrams</li>
                     </ul>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div><!-- modal footer -->
                 </div><!-- div row -->
             </div> <!-- modal body -->
         </div><!-- modal content -->
@@ -1372,7 +1401,7 @@ add the first 12 stuff in there
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Business Origami</h5>
-                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div><!-- modal header -->
@@ -1381,6 +1410,9 @@ add the first 12 stuff in there
                 <p>Business Origami provides a forum in which project stakeholders can come together in a workshop setting to build a physical representation of a system, and then prototype future or alternative states of the same system.
                     <br><br>
                 The experience of modeling the system is the critical deliverable. The final result is a physical representation of the current system design that reveals how the different touch points realistically play out over time. The method gives all participants an equal voice in the prototyping activity, and it can bridge different perspectives by providing a common reference for further discussion.</p>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div><!-- modal footer -->
             </div><!-- div row -->
         </div> <!-- modal body -->
     </div><!-- modal content -->
@@ -1393,7 +1425,7 @@ add the first 12 stuff in there
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Card Sorting</h5>
-                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div><!-- modal header -->
@@ -1412,6 +1444,9 @@ add the first 12 stuff in there
                     <li>Include blank cards and markers to allow participants to add their own items where needed.</li>
                     <li>If there are no consistent patterns emerging after ten card sorts, consider renaming the cards, or reconsider the categories.</li>
                 </ul>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div><!-- modal footer -->
             </div><!-- div row -->
         </div> <!-- modal body -->
     </div><!-- modal content -->
@@ -1424,7 +1459,7 @@ add the first 12 stuff in there
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Case Studies</h5>
-                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div><!-- modal header -->
@@ -1435,31 +1470,37 @@ add the first 12 stuff in there
                     <br><br>
                     Case studies are inclusive, assuming that consideration of the whole, covering interrelationships, is more advantageous than a reductionist study of parts, and that this depth compensates for any shortcomings in breadth and the ability to generalize
                     <br><br>
-                Case studies require the researcher to determine a problem, make initial hypotheses, conduct research through interviews, observations, and other forms of information gathering, revise hypotheses and theory, and tell a story</p>
+                    Case studies require the researcher to determine a problem, make initial hypotheses, conduct research through interviews, observations, and other forms of information gathering, revise hypotheses and theory, and tell a story</p>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div><!-- modal footer -->
+                </div> <!-- modal body -->
+            </div><!-- modal content -->
+        </div><!-- modal dialog -->
+    </div><!-- modal fade -->
+
+    <!-- Modal text12 -->
+    <div class="modal fade textPost12">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Cognitive Mapping</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div><!-- modal header -->
+                <div class="modal-body">
+                    <img src="./img/CognitiveMapping.jpg" class="img-responsive center-block" width="100%">
+                    <p>Its purpose is to reveal how people think about a problem space, and visualize how they process and make sense of their experience. As the map builds, the participant’s subjective patterns of reasoning can be revealed and the underlying nature of the problem exposed.
+                        <br><br>
+                    When “group” maps are produced that weave together multiple points of view, the maps can serve as a powerful consensus-making tool. The guidelines around building cognitive maps are purposely written to remain flexible.</p>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div><!-- modal footer -->
+                </div><!-- div row -->
             </div> <!-- modal body -->
         </div><!-- modal content -->
     </div><!-- modal dialog -->
-</div><!-- modal fade -->
-
-<!-- Modal text12 -->
-<div class="modal fade textPost12">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Cognitive Mapping</h5>
-                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div><!-- modal header -->
-            <div class="modal-body">
-                <img src="./img/CognitiveMapping.jpg" class="img-responsive center-block" width="100%">
-                <p>Its purpose is to reveal how people think about a problem space, and visualize how they process and make sense of their experience. As the map builds, the participant’s subjective patterns of reasoning can be revealed and the underlying nature of the problem exposed.
-                    <br><br>
-                When “group” maps are produced that weave together multiple points of view, the maps can serve as a powerful consensus-making tool. The guidelines around building cognitive maps are purposely written to remain flexible.</p>
-            </div><!-- div row -->
-        </div> <!-- modal body -->
-    </div><!-- modal content -->
-</div><!-- modal dialog -->
 </div><!-- modal fade -->
 
 <!-- Modal text13 -->
@@ -1468,7 +1509,7 @@ add the first 12 stuff in there
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Cognitive Walkthrough</h5>
-                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div><!-- modal header -->
@@ -1477,10 +1518,13 @@ add the first 12 stuff in there
                 <div class="row">
                   <div class="column col-sm-6 col-xs-12"><span>Pros</span><br> placeholder text</div>
                   <div class="column col-sm-6 col-xs-12"><span>Cons</span><br> placeholder text</div>
-              </div><!-- div row -->
-          </div> <!-- modal body -->
-      </div><!-- modal content -->
-  </div><!-- modal dialog -->
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div><!-- modal footer -->
+            </div><!-- div row -->
+        </div> <!-- modal body -->
+    </div><!-- modal content -->
+</div><!-- modal dialog -->
 </div><!-- modal fade -->
 
 <!-- Modal text14 -->
@@ -1489,7 +1533,7 @@ add the first 12 stuff in there
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Collage</h5>
-                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div><!-- modal header -->
@@ -1498,10 +1542,13 @@ add the first 12 stuff in there
                 <div class="row">
                   <div class="column col-sm-6 col-xs-12"><span>Pros</span><br> placeholder text</div>
                   <div class="column col-sm-6 col-xs-12"><span>Cons</span><br> placeholder text</div>
-              </div><!-- div row -->
-          </div> <!-- modal body -->
-      </div><!-- modal content -->
-  </div><!-- modal dialog -->
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div><!-- modal footer -->
+            </div><!-- div row -->
+        </div> <!-- modal body -->
+    </div><!-- modal content -->
+</div><!-- modal dialog -->
 </div><!-- modal fade -->
 
 <!-- Modal text15 -->
@@ -1510,7 +1557,7 @@ add the first 12 stuff in there
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Competitive Testing</h5>
-                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div><!-- modal header -->
@@ -1519,10 +1566,13 @@ add the first 12 stuff in there
                 <div class="row">
                   <div class="column col-sm-6 col-xs-12"><span>Pros</span><br> placeholder text</div>
                   <div class="column col-sm-6 col-xs-12"><span>Cons</span><br> placeholder text</div>
-              </div><!-- div row -->
-          </div> <!-- modal body -->
-      </div><!-- modal content -->
-  </div><!-- modal dialog -->
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div><!-- modal footer -->
+            </div><!-- div row -->
+        </div> <!-- modal body -->
+    </div><!-- modal content -->
+</div><!-- modal dialog -->
 </div><!-- modal fade -->
 
 <!-- Modal text16 -->
@@ -1531,7 +1581,7 @@ add the first 12 stuff in there
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Concept Mapping</h5>
-                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div><!-- modal header -->
@@ -1540,10 +1590,13 @@ add the first 12 stuff in there
                 <div class="row">
                   <div class="column col-sm-6 col-xs-12"><span>Pros</span><br> placeholder text</div>
                   <div class="column col-sm-6 col-xs-12"><span>Cons</span><br> placeholder text</div>
-              </div><!-- div row -->
-          </div> <!-- modal body -->
-      </div><!-- modal content -->
-  </div><!-- modal dialog -->
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div><!-- modal footer -->
+            </div><!-- div row -->
+        </div> <!-- modal body -->
+    </div><!-- modal content -->
+</div><!-- modal dialog -->
 </div><!-- modal fade -->
 
 <!-- Modal text17 -->
@@ -1552,7 +1605,7 @@ add the first 12 stuff in there
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Content Analysis</h5>
-                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div><!-- modal header -->
@@ -1561,10 +1614,13 @@ add the first 12 stuff in there
                 <div class="row">
                   <div class="column col-sm-6 col-xs-12"><span>Pros</span><br> placeholder text</div>
                   <div class="column col-sm-6 col-xs-12"><span>Cons</span><br> placeholder text</div>
-              </div><!-- div row -->
-          </div> <!-- modal body -->
-      </div><!-- modal content -->
-  </div><!-- modal dialog -->
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div><!-- modal footer -->
+            </div><!-- div row -->
+        </div> <!-- modal body -->
+    </div><!-- modal content -->
+</div><!-- modal dialog -->
 </div><!-- modal fade -->
 
 <!-- Modal text18 -->
@@ -1573,7 +1629,7 @@ add the first 12 stuff in there
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Content Inventory & Audit</h5>
-                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div><!-- modal header -->
@@ -1582,10 +1638,13 @@ add the first 12 stuff in there
                 <div class="row">
                   <div class="column col-sm-6 col-xs-12"><span>Pros</span><br> placeholder text</div>
                   <div class="column col-sm-6 col-xs-12"><span>Cons</span><br> placeholder text</div>
-              </div><!-- div row -->
-          </div> <!-- modal body -->
-      </div><!-- modal content -->
-  </div><!-- modal dialog -->
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div><!-- modal footer -->
+            </div><!-- div row -->
+        </div> <!-- modal body -->
+    </div><!-- modal content -->
+</div><!-- modal dialog -->
 </div><!-- modal fade -->
 
 <!-- Modal text19 -->
@@ -1594,7 +1653,7 @@ add the first 12 stuff in there
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Contextual Design</h5>
-                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div><!-- modal header -->
@@ -1603,10 +1662,13 @@ add the first 12 stuff in there
                 <div class="row">
                   <div class="column col-sm-6 col-xs-12"><span>Pros</span><br> placeholder text</div>
                   <div class="column col-sm-6 col-xs-12"><span>Cons</span><br> placeholder text</div>
-              </div><!-- div row -->
-          </div> <!-- modal body -->
-      </div><!-- modal content -->
-  </div><!-- modal dialog -->
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div><!-- modal footer -->
+            </div><!-- div row -->
+        </div> <!-- modal body -->
+    </div><!-- modal content -->
+</div><!-- modal dialog -->
 </div><!-- modal fade -->
 
 <!-- Modal text20 -->
@@ -1615,7 +1677,7 @@ add the first 12 stuff in there
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Contextual Inquiry</h5>
-                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div><!-- modal header -->
@@ -1624,10 +1686,13 @@ add the first 12 stuff in there
                 <div class="row">
                   <div class="column col-sm-6 col-xs-12"><span>Pros</span><br> placeholder text</div>
                   <div class="column col-sm-6 col-xs-12"><span>Cons</span><br> placeholder text</div>
-              </div><!-- div row -->
-          </div> <!-- modal body -->
-      </div><!-- modal content -->
-  </div><!-- modal dialog -->
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div><!-- modal footer -->
+            </div><!-- div row -->
+        </div> <!-- modal body -->
+    </div><!-- modal content -->
+</div><!-- modal dialog -->
 </div><!-- modal fade -->
 </body>
 </html>
