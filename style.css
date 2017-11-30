@@ -188,6 +188,12 @@ a:active{
 
 /* Modals
 ---------------------------------------------------------------------- */
+.modal {
+    margin-left:1.5rem;
+    margin-right: 1.5rem;
+    margin-bottom: 2rem;
+}
+
 .modal-body {
     margin-left:1.5rem;
     margin-right: 1.5rem;
